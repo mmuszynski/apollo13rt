@@ -1,0 +1,504 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		27AA171E229F1E91002D0F1B /* TranscriptTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA171D229F1E91002D0F1B /* TranscriptTableViewCell.swift */; };
+		27AA1722229F1FD1002D0F1B /* air-ground-loop.json in Resources */ = {isa = PBXBuildFile; fileRef = 27AA1720229F1FD1002D0F1B /* air-ground-loop.json */; };
+		27AA1723229F1FD1002D0F1B /* flight-director-loop.json in Resources */ = {isa = PBXBuildFile; fileRef = 27AA1721229F1FD1002D0F1B /* flight-director-loop.json */; };
+		27AA1725229F201B002D0F1B /* TranscriptEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA1724229F201B002D0F1B /* TranscriptEntry.swift */; };
+		27AA1727229F2103002D0F1B /* air-ground-loop.json in Resources */ = {isa = PBXBuildFile; fileRef = 27AA1720229F1FD1002D0F1B /* air-ground-loop.json */; };
+		27AB43C622A0B687006D7A5F /* full.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 27AB43C522A0B687006D7A5F /* full.m4a */; };
+		27AB43CA22A0BF96006D7A5F /* Transcript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AB43C922A0BF95006D7A5F /* Transcript.swift */; };
+		27ACF62A229EFFF900B2E9B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ACF629229EFFF900B2E9B2 /* AppDelegate.swift */; };
+		27ACF62C229EFFF900B2E9B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ACF62B229EFFF900B2E9B2 /* ViewController.swift */; };
+		27ACF62F229EFFF900B2E9B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27ACF62D229EFFF900B2E9B2 /* Main.storyboard */; };
+		27ACF631229EFFFB00B2E9B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27ACF630229EFFFB00B2E9B2 /* Assets.xcassets */; };
+		27ACF634229EFFFB00B2E9B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27ACF632229EFFFB00B2E9B2 /* LaunchScreen.storyboard */; };
+		27ACF63F229EFFFB00B2E9B2 /* Apollo13RealtimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ACF63E229EFFFB00B2E9B2 /* Apollo13RealtimeTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		27ACF63B229EFFFB00B2E9B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27ACF61E229EFFF900B2E9B2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27ACF625229EFFF900B2E9B2;
+			remoteInfo = Apollo13Realtime;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		27AA171D229F1E91002D0F1B /* TranscriptTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptTableViewCell.swift; sourceTree = "<group>"; };
+		27AA1720229F1FD1002D0F1B /* air-ground-loop.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "air-ground-loop.json"; path = "../../script/air-ground-loop.json"; sourceTree = "<group>"; };
+		27AA1721229F1FD1002D0F1B /* flight-director-loop.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "flight-director-loop.json"; path = "../../script/flight-director-loop.json"; sourceTree = "<group>"; };
+		27AA1724229F201B002D0F1B /* TranscriptEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptEntry.swift; sourceTree = "<group>"; };
+		27AB43C522A0B687006D7A5F /* full.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = full.m4a; path = ../../../../../Desktop/full.m4a; sourceTree = "<group>"; };
+		27AB43C922A0BF95006D7A5F /* Transcript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transcript.swift; sourceTree = "<group>"; };
+		27ACF626229EFFF900B2E9B2 /* Apollo13Realtime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apollo13Realtime.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		27ACF629229EFFF900B2E9B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		27ACF62B229EFFF900B2E9B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		27ACF62E229EFFF900B2E9B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		27ACF630229EFFFB00B2E9B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		27ACF633229EFFFB00B2E9B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		27ACF635229EFFFB00B2E9B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27ACF63A229EFFFB00B2E9B2 /* Apollo13RealtimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Apollo13RealtimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		27ACF63E229EFFFB00B2E9B2 /* Apollo13RealtimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apollo13RealtimeTests.swift; sourceTree = "<group>"; };
+		27ACF640229EFFFB00B2E9B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		27ACF623229EFFF900B2E9B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27ACF637229EFFFB00B2E9B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		27AA171F229F1F88002D0F1B /* Transcripts */ = {
+			isa = PBXGroup;
+			children = (
+				27AA1720229F1FD1002D0F1B /* air-ground-loop.json */,
+				27AA1721229F1FD1002D0F1B /* flight-director-loop.json */,
+			);
+			path = Transcripts;
+			sourceTree = "<group>";
+		};
+		27ACF61D229EFFF900B2E9B2 = {
+			isa = PBXGroup;
+			children = (
+				27AA171F229F1F88002D0F1B /* Transcripts */,
+				27ACF628229EFFF900B2E9B2 /* Apollo13Realtime */,
+				27ACF63D229EFFFB00B2E9B2 /* Apollo13RealtimeTests */,
+				27ACF627229EFFF900B2E9B2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		27ACF627229EFFF900B2E9B2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				27ACF626229EFFF900B2E9B2 /* Apollo13Realtime.app */,
+				27ACF63A229EFFFB00B2E9B2 /* Apollo13RealtimeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		27ACF628229EFFF900B2E9B2 /* Apollo13Realtime */ = {
+			isa = PBXGroup;
+			children = (
+				27ACF629229EFFF900B2E9B2 /* AppDelegate.swift */,
+				27ACF62B229EFFF900B2E9B2 /* ViewController.swift */,
+				27AB43C522A0B687006D7A5F /* full.m4a */,
+				27AA171D229F1E91002D0F1B /* TranscriptTableViewCell.swift */,
+				27AA1724229F201B002D0F1B /* TranscriptEntry.swift */,
+				27AB43C922A0BF95006D7A5F /* Transcript.swift */,
+				27ACF62D229EFFF900B2E9B2 /* Main.storyboard */,
+				27ACF630229EFFFB00B2E9B2 /* Assets.xcassets */,
+				27ACF632229EFFFB00B2E9B2 /* LaunchScreen.storyboard */,
+				27ACF635229EFFFB00B2E9B2 /* Info.plist */,
+			);
+			path = Apollo13Realtime;
+			sourceTree = "<group>";
+		};
+		27ACF63D229EFFFB00B2E9B2 /* Apollo13RealtimeTests */ = {
+			isa = PBXGroup;
+			children = (
+				27ACF63E229EFFFB00B2E9B2 /* Apollo13RealtimeTests.swift */,
+				27ACF640229EFFFB00B2E9B2 /* Info.plist */,
+			);
+			path = Apollo13RealtimeTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		27ACF625229EFFF900B2E9B2 /* Apollo13Realtime */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27ACF643229EFFFB00B2E9B2 /* Build configuration list for PBXNativeTarget "Apollo13Realtime" */;
+			buildPhases = (
+				27ACF622229EFFF900B2E9B2 /* Sources */,
+				27ACF623229EFFF900B2E9B2 /* Frameworks */,
+				27ACF624229EFFF900B2E9B2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Apollo13Realtime;
+			productName = Apollo13Realtime;
+			productReference = 27ACF626229EFFF900B2E9B2 /* Apollo13Realtime.app */;
+			productType = "com.apple.product-type.application";
+		};
+		27ACF639229EFFFB00B2E9B2 /* Apollo13RealtimeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27ACF646229EFFFB00B2E9B2 /* Build configuration list for PBXNativeTarget "Apollo13RealtimeTests" */;
+			buildPhases = (
+				27ACF636229EFFFB00B2E9B2 /* Sources */,
+				27ACF637229EFFFB00B2E9B2 /* Frameworks */,
+				27ACF638229EFFFB00B2E9B2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27ACF63C229EFFFB00B2E9B2 /* PBXTargetDependency */,
+			);
+			name = Apollo13RealtimeTests;
+			productName = Apollo13RealtimeTests;
+			productReference = 27ACF63A229EFFFB00B2E9B2 /* Apollo13RealtimeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		27ACF61E229EFFF900B2E9B2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Mike Muszynski";
+				TargetAttributes = {
+					27ACF625229EFFF900B2E9B2 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					27ACF639229EFFFB00B2E9B2 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 27ACF625229EFFF900B2E9B2;
+					};
+				};
+			};
+			buildConfigurationList = 27ACF621229EFFF900B2E9B2 /* Build configuration list for PBXProject "Apollo13Realtime" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 27ACF61D229EFFF900B2E9B2;
+			productRefGroup = 27ACF627229EFFF900B2E9B2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				27ACF625229EFFF900B2E9B2 /* Apollo13Realtime */,
+				27ACF639229EFFFB00B2E9B2 /* Apollo13RealtimeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		27ACF624229EFFF900B2E9B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27ACF634229EFFFB00B2E9B2 /* LaunchScreen.storyboard in Resources */,
+				27AB43C622A0B687006D7A5F /* full.m4a in Resources */,
+				27AA1723229F1FD1002D0F1B /* flight-director-loop.json in Resources */,
+				27ACF631229EFFFB00B2E9B2 /* Assets.xcassets in Resources */,
+				27ACF62F229EFFF900B2E9B2 /* Main.storyboard in Resources */,
+				27AA1722229F1FD1002D0F1B /* air-ground-loop.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27ACF638229EFFFB00B2E9B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27AA1727229F2103002D0F1B /* air-ground-loop.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		27ACF622229EFFF900B2E9B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27AA1725229F201B002D0F1B /* TranscriptEntry.swift in Sources */,
+				27AB43CA22A0BF96006D7A5F /* Transcript.swift in Sources */,
+				27ACF62C229EFFF900B2E9B2 /* ViewController.swift in Sources */,
+				27AA171E229F1E91002D0F1B /* TranscriptTableViewCell.swift in Sources */,
+				27ACF62A229EFFF900B2E9B2 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27ACF636229EFFFB00B2E9B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27ACF63F229EFFFB00B2E9B2 /* Apollo13RealtimeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		27ACF63C229EFFFB00B2E9B2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27ACF625229EFFF900B2E9B2 /* Apollo13Realtime */;
+			targetProxy = 27ACF63B229EFFFB00B2E9B2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		27ACF62D229EFFF900B2E9B2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27ACF62E229EFFF900B2E9B2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		27ACF632229EFFFB00B2E9B2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27ACF633229EFFFB00B2E9B2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		27ACF641229EFFFB00B2E9B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		27ACF642229EFFFB00B2E9B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		27ACF644229EFFFB00B2E9B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DF288G8ZJ6;
+				INFOPLIST_FILE = Apollo13Realtime/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mmuszynski.Apollo13Realtime;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		27ACF645229EFFFB00B2E9B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DF288G8ZJ6;
+				INFOPLIST_FILE = Apollo13Realtime/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mmuszynski.Apollo13Realtime;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		27ACF647229EFFFB00B2E9B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DF288G8ZJ6;
+				INFOPLIST_FILE = Apollo13RealtimeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mmuszynski.Apollo13RealtimeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Apollo13Realtime.app/Apollo13Realtime";
+			};
+			name = Debug;
+		};
+		27ACF648229EFFFB00B2E9B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DF288G8ZJ6;
+				INFOPLIST_FILE = Apollo13RealtimeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mmuszynski.Apollo13RealtimeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Apollo13Realtime.app/Apollo13Realtime";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		27ACF621229EFFF900B2E9B2 /* Build configuration list for PBXProject "Apollo13Realtime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27ACF641229EFFFB00B2E9B2 /* Debug */,
+				27ACF642229EFFFB00B2E9B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27ACF643229EFFFB00B2E9B2 /* Build configuration list for PBXNativeTarget "Apollo13Realtime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27ACF644229EFFFB00B2E9B2 /* Debug */,
+				27ACF645229EFFFB00B2E9B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27ACF646229EFFFB00B2E9B2 /* Build configuration list for PBXNativeTarget "Apollo13RealtimeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27ACF647229EFFFB00B2E9B2 /* Debug */,
+				27ACF648229EFFFB00B2E9B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 27ACF61E229EFFF900B2E9B2 /* Project object */;
+}
