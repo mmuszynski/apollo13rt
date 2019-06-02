@@ -36,7 +36,6 @@ struct TranscriptEntry: Codable {
     
     var annotatedMessage: NSAttributedString {
         var final = message
-        
         var rangesOfAnnotations: [NSRange] = []
         while let annotationStart = final.firstIndex(of: "{") {
             guard let annotationEnd = final.firstIndex(of: "}") else { continue }
