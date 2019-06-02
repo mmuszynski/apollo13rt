@@ -35,13 +35,16 @@ struct TranscriptEntry: Codable {
     
     var annotatedMessage: NSAttributedString {
         var final = message
-        var rangesOfAnnotations: [Range<String.Index>] = []
+        var rangesOfAnnotations: [NSRange] = []
         while let annotationStart = final.firstIndex(of: "{") {
             guard let annotationEnd = final.firstIndex(of: "}") else { continue }
             
-            rangesOfAnnotations.append(annotationStart..<annotationEnd)
+            let swiftRange = annotationStart..<final.index(before: annotationEnd)
+            let range = NSRange(swiftRange, in: final)
+            rangesOfAnnotations.append(range)
+            
             final.remove(at: annotationStart)
-            final.remove(at: annotationEnd)
+            final.replaceSubrange(swiftRange, with: "\(annotations!.count)")
         }
         let attributed = NSMutableAttributedString(string: message)
         
