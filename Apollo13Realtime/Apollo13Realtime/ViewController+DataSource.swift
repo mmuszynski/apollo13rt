@@ -8,17 +8,6 @@
 
 import UIKit
 
-extension UIFont {
-    static var menloBold15: UIFont {
-        let descriptor = UIFontDescriptor(name: "Menlo", size: 15.0)
-        return UIFont(descriptor: descriptor.withSymbolicTraits(.traitBold)!, size: 0)
-    }
-    static var menloRegular15: UIFont {
-        let descriptor = UIFontDescriptor(name: "Menlo", size: 15.0)
-        return UIFont(descriptor: descriptor, size: 0)
-    }
-}
-
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     // MARK: UITableViewDataSource Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

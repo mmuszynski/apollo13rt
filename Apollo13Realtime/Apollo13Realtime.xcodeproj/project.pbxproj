@@ -19,6 +19,7 @@
 		27ACF631229EFFFB00B2E9B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27ACF630229EFFFB00B2E9B2 /* Assets.xcassets */; };
 		27ACF634229EFFFB00B2E9B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27ACF632229EFFFB00B2E9B2 /* LaunchScreen.storyboard */; };
 		27ACF63F229EFFFB00B2E9B2 /* Apollo13RealtimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ACF63E229EFFFB00B2E9B2 /* Apollo13RealtimeTests.swift */; };
+		27AD5C3422A5AF150082DE8A /* FontHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AD5C3322A5AF150082DE8A /* FontHelpers.swift */; };
 		27EB8BB222A4B77500D81B6E /* ViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EB8BB122A4B77500D81B6E /* ViewController+DataSource.swift */; };
 		27EC8AF722A4319E00056467 /* full.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 27EC8AF622A4319E00056467 /* full.m4a */; };
 /* End PBXBuildFile section */
@@ -49,6 +50,7 @@
 		27ACF63A229EFFFB00B2E9B2 /* Apollo13RealtimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Apollo13RealtimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27ACF63E229EFFFB00B2E9B2 /* Apollo13RealtimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apollo13RealtimeTests.swift; sourceTree = "<group>"; };
 		27ACF640229EFFFB00B2E9B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27AD5C3322A5AF150082DE8A /* FontHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontHelpers.swift; sourceTree = "<group>"; };
 		27EB8BB122A4B77500D81B6E /* ViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+DataSource.swift"; sourceTree = "<group>"; };
 		27EC8AF622A4319E00056467 /* full.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = full.m4a; path = ../../../../../Desktop/full.m4a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,8 +109,8 @@
 				27ACF62B229EFFF900B2E9B2 /* ViewController.swift */,
 				27EB8BB122A4B77500D81B6E /* ViewController+DataSource.swift */,
 				27AA171D229F1E91002D0F1B /* TranscriptTableViewCell.swift */,
-				27AA1724229F201B002D0F1B /* TranscriptEntry.swift */,
-				27AB43C922A0BF95006D7A5F /* Transcript.swift */,
+				27AD5C3522A5AF6B0082DE8A /* Transcripts */,
+				27AD5C3322A5AF150082DE8A /* FontHelpers.swift */,
 				27ACF62D229EFFF900B2E9B2 /* Main.storyboard */,
 				27ACF630229EFFFB00B2E9B2 /* Assets.xcassets */,
 				27ACF632229EFFFB00B2E9B2 /* LaunchScreen.storyboard */,
@@ -124,6 +126,15 @@
 				27ACF640229EFFFB00B2E9B2 /* Info.plist */,
 			);
 			path = Apollo13RealtimeTests;
+			sourceTree = "<group>";
+		};
+		27AD5C3522A5AF6B0082DE8A /* Transcripts */ = {
+			isa = PBXGroup;
+			children = (
+				27AA1724229F201B002D0F1B /* TranscriptEntry.swift */,
+				27AB43C922A0BF95006D7A5F /* Transcript.swift */,
+			);
+			path = Transcripts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +247,7 @@
 				27AB43CA22A0BF96006D7A5F /* Transcript.swift in Sources */,
 				27ACF62C229EFFF900B2E9B2 /* ViewController.swift in Sources */,
 				27AA171E229F1E91002D0F1B /* TranscriptTableViewCell.swift in Sources */,
+				27AD5C3422A5AF150082DE8A /* FontHelpers.swift in Sources */,
 				27ACF62A229EFFF900B2E9B2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
