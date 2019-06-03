@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController {
     
     var player: AVPlayer!
     
@@ -102,39 +102,45 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         updateHighlighting()
     }
     
+    lazy var highlightColor = UIColor(white: 0.0, alpha: 0.05)
+    
     /// Highlights any rows with a given id
     ///
     /// - Parameters:
     ///   - tableView: The tableview to highlight
     ///   - id: The id of the transcript to highlight
-    private func highlightRows(in tableView: UITableView, withId id: Int) {
+    private func highlightRows(in tableView: UITableView, withIds ids: [Int]) {
         var matches = [(offset: Int, element: TranscriptEntry)]()
         if tableView === airGroundTableView {
             let airGroundMatches = airGroundLoop.enumerated().filter { (offset, element) -> Bool in
-                return element.id == id
+                return ids.contains(element.id)
             }
             matches.append(contentsOf: airGroundMatches)
         } else {
             let flightMatches = flightDirectorLoop.enumerated().filter { (offset, element) -> Bool in
-                return element.id == id
+                return ids.contains(element.id)
             }
             matches.append(contentsOf: flightMatches)
         }
         
-        let paths = matches.map { IndexPath(row: $0.offset, section: 0) }
+        let paths = matches.map { IndexPath(row: $0.offset, section: 0) }.sorted { (path1, path2) -> Bool in
+            path1.row < path2.row
+        }
+        
+        self.activeIndexPaths = paths
         
         for indexPath in paths {
             let row = tableView.cellForRow(at: indexPath)
-            row?.backgroundColor = UIColor(white: 0.0, alpha: 0.05)
+            row?.backgroundColor = highlightColor
         }
         
         if tableView === airGroundTableView {
-            if mostInterestingAirGroundIndexPath != paths.first {
-                mostInterestingAirGroundIndexPath = paths.first
+            if earliestActiveAirGroundIndexPath != paths.first {
+                earliestActiveAirGroundIndexPath = paths.first
             }
         } else {
-            if mostInterestingFlightIndexPath != paths.first {
-                mostInterestingFlightIndexPath = paths.first
+            if earliestActiveFlightIndexPath != paths.first {
+                earliestActiveFlightIndexPath = paths.first
             }
         }
         
@@ -143,52 +149,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    var mostInterestingFlightIndexPath: IndexPath? {
+    /// `IndexPath`s representing the table view cells that are currently active and should be highlighted
+    var activeIndexPaths: [IndexPath] = []
+    
+    var earliestActiveFlightIndexPath: IndexPath? {
         didSet {
-            guard let path = mostInterestingFlightIndexPath else { return }
+            guard let path = earliestActiveFlightIndexPath else { return }
             flightDirectorTableView.scrollToRow(at: path, at: .top, animated: true)
         }
     }
     
-    var mostInterestingAirGroundIndexPath: IndexPath? {
+    var earliestActiveAirGroundIndexPath: IndexPath? {
         didSet {
-            guard let path = mostInterestingAirGroundIndexPath else { return }
+            guard let path = earliestActiveAirGroundIndexPath else { return }
             airGroundTableView.scrollToRow(at: path, at: .top, animated: true)
         }
-    }
-    
-    // MARK: UITableViewDataSource Methods
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableView === airGroundTableView {
-            return airGroundLoop.count
-        } else {
-            return flightDirectorLoop.count
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        var entry: TranscriptEntry!
-        if tableView === airGroundTableView {
-            entry = airGroundLoop[indexPath.row]
-        } else {
-            entry = flightDirectorLoop[indexPath.row]
-        }
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TranscriptCell", for: indexPath) as! TranscriptTableViewCell
-        
-        if let startTime = entry.start  {
-            cell.timestampLabel.text = timeFormatter.string(from: TimeInterval(startTime))
-            cell.timestampLabel.alpha = 1.0
-        } else {
-            cell.timestampLabel.alpha = 0.0
-        }
-        
-        cell.messageLabel.text = entry.message
-        cell.sourceLabel.text = entry.source
-        
-        cell.backgroundColor = .white
-        return cell
     }
     
     // MARK: Time Label Updating
@@ -225,13 +200,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         highlightedAirGroundIDs = airGroundLoop.activeIDs(for: self.playerTimeInMET)
         highlightedFlightDirectorIDs = flightDirectorLoop.activeIDs(for: self.playerTimeInMET)
         
-        for id in highlightedAirGroundIDs {
-            highlightRows(in: airGroundTableView, withId: id)
-        }
-        
-        for id in highlightedFlightDirectorIDs {
-            highlightRows(in: flightDirectorTableView, withId: id)
-        }
+        highlightRows(in: airGroundTableView, withIds: highlightedAirGroundIDs)
+        highlightRows(in: flightDirectorTableView, withIds: highlightedFlightDirectorIDs)
     }
     
     // MARK: Player Controls

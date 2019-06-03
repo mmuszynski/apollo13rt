@@ -30,38 +30,45 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eqw-kn-kMf">
-                                                    <rect key="frame" x="89" y="29" width="536" height="138"/>
+                                                    <rect key="frame" x="83.5" y="28.5" width="540" height="70"/>
                                                     <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In scelerisque eros sit amet quam placerat, vel semper elit hendrerit. Etiam vestibulum metus turpis, sed ultrices dui pellentesque vel. Phasellus sodales nisi nisl, ac aliquet urna blandit vitae. Nullam quis lorem in diam venenatis condimentum in non eros.</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="751" text="59:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prk-u2-zzQ">
-                                                    <rect key="frame" x="15" y="11" width="64" height="18"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="textColor"/>
+                                                    <rect key="frame" x="15" y="11" width="58.5" height="17.5"/>
+                                                    <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="252" text="SOURCE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRW-dU-mYP">
-                                                    <rect key="frame" x="89" y="11" width="63" height="18"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <rect key="frame" x="83.5" y="11" width="55.5" height="17.5"/>
+                                                    <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6ha-5x-tWo">
+                                                    <rect key="frame" x="83.5" y="98.5" width="540" height="70.5"/>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nRW-dU-mYP" secondAttribute="trailing" constant="20" symbolic="YES" id="3xq-be-bX8"/>
                                                 <constraint firstItem="nRW-dU-mYP" firstAttribute="firstBaseline" secondItem="prk-u2-zzQ" secondAttribute="firstBaseline" id="9wh-ZC-unA"/>
+                                                <constraint firstItem="6ha-5x-tWo" firstAttribute="leading" secondItem="Eqw-kn-kMf" secondAttribute="leading" id="EPd-OS-Crx"/>
                                                 <constraint firstItem="prk-u2-zzQ" firstAttribute="leading" secondItem="aWV-fg-DsE" secondAttribute="leadingMargin" id="GD6-ax-SLh"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Eqw-kn-kMf" secondAttribute="trailing" constant="10" id="Mp3-Za-jqm"/>
-                                                <constraint firstAttribute="bottom" secondItem="Eqw-kn-kMf" secondAttribute="bottom" constant="10" id="Oce-m3-sXa"/>
                                                 <constraint firstItem="nRW-dU-mYP" firstAttribute="leading" secondItem="prk-u2-zzQ" secondAttribute="trailing" constant="10" id="Rey-ei-nVM"/>
+                                                <constraint firstAttribute="bottom" secondItem="6ha-5x-tWo" secondAttribute="bottom" constant="8" id="bzj-19-e3O"/>
                                                 <constraint firstItem="Eqw-kn-kMf" firstAttribute="top" secondItem="nRW-dU-mYP" secondAttribute="bottom" id="fvt-8Q-hQe"/>
                                                 <constraint firstItem="prk-u2-zzQ" firstAttribute="top" secondItem="aWV-fg-DsE" secondAttribute="topMargin" id="lwl-9U-eGs"/>
+                                                <constraint firstItem="6ha-5x-tWo" firstAttribute="top" secondItem="Eqw-kn-kMf" secondAttribute="bottom" id="qdD-vF-RWN"/>
+                                                <constraint firstItem="Eqw-kn-kMf" firstAttribute="trailing" secondItem="6ha-5x-tWo" secondAttribute="trailing" id="wF4-3C-96H"/>
                                                 <constraint firstItem="Eqw-kn-kMf" firstAttribute="leading" secondItem="nRW-dU-mYP" secondAttribute="leading" id="zX7-b4-LfH"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="annotationStackView" destination="6ha-5x-tWo" id="av8-7b-tbX"/>
                                             <outlet property="messageLabel" destination="Eqw-kn-kMf" id="LnM-WJ-Sgm"/>
                                             <outlet property="sourceLabel" destination="nRW-dU-mYP" id="XXt-Dh-fyP"/>
                                             <outlet property="timestampLabel" destination="prk-u2-zzQ" id="2s5-SC-cTN"/>
@@ -77,49 +84,56 @@
                                 <rect key="frame" x="693" y="152" width="653" height="852"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TranscriptCell" rowHeight="177" id="LbN-ky-cr0" customClass="TranscriptTableViewCell" customModule="Apollo13Realtime" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TranscriptCell" rowHeight="177" id="va7-Zq-xXk" customClass="TranscriptTableViewCell" customModule="Apollo13Realtime" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="653" height="177"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LbN-ky-cr0" id="NRq-zg-Gq1">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="va7-Zq-xXk" id="auy-MI-8oD">
                                             <rect key="frame" x="0.0" y="0.0" width="653" height="176.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3P-XU-Gih">
-                                                    <rect key="frame" x="89" y="29" width="536" height="137.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qe7-JN-0kR">
+                                                    <rect key="frame" x="97.5" y="28.5" width="542" height="105"/>
                                                     <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In scelerisque eros sit amet quam placerat, vel semper elit hendrerit. Etiam vestibulum metus turpis, sed ultrices dui pellentesque vel. Phasellus sodales nisi nisl, ac aliquet urna blandit vitae. Nullam quis lorem in diam venenatis condimentum in non eros.</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="751" text="59:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNt-Vh-aQ7">
-                                                    <rect key="frame" x="15" y="11" width="64" height="18"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="751" text="59:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0sy-m6-HRN">
+                                                    <rect key="frame" x="15" y="11" width="72.5" height="17.5"/>
+                                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="252" text="SOURCE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xux-uS-NVj">
+                                                    <rect key="frame" x="97.5" y="11" width="54.5" height="17.5"/>
+                                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="252" text="SOURCE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wz-UR-25m">
-                                                    <rect key="frame" x="89" y="11" width="63" height="18"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zqZ-2G-EDf">
+                                                    <rect key="frame" x="97.5" y="133.5" width="542" height="35"/>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Z3P-XU-Gih" firstAttribute="top" secondItem="7Wz-UR-25m" secondAttribute="bottom" id="6ip-kx-RIi"/>
-                                                <constraint firstItem="Z3P-XU-Gih" firstAttribute="leading" secondItem="7Wz-UR-25m" secondAttribute="leading" id="9kO-p3-i9l"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7Wz-UR-25m" secondAttribute="trailing" constant="20" symbolic="YES" id="Gh6-ox-vAD"/>
-                                                <constraint firstItem="KNt-Vh-aQ7" firstAttribute="leading" secondItem="NRq-zg-Gq1" secondAttribute="leadingMargin" id="YM5-ik-aKs"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Z3P-XU-Gih" secondAttribute="trailing" constant="10" id="fL6-kb-suG"/>
-                                                <constraint firstAttribute="bottom" secondItem="Z3P-XU-Gih" secondAttribute="bottom" constant="10" id="nmZ-96-JjY"/>
-                                                <constraint firstItem="KNt-Vh-aQ7" firstAttribute="top" secondItem="NRq-zg-Gq1" secondAttribute="topMargin" id="oMh-qn-hZG"/>
-                                                <constraint firstItem="7Wz-UR-25m" firstAttribute="firstBaseline" secondItem="KNt-Vh-aQ7" secondAttribute="firstBaseline" id="p8U-5e-FcK"/>
-                                                <constraint firstItem="7Wz-UR-25m" firstAttribute="leading" secondItem="KNt-Vh-aQ7" secondAttribute="trailing" constant="10" id="v2u-nP-HtS"/>
+                                                <constraint firstItem="zqZ-2G-EDf" firstAttribute="top" secondItem="Qe7-JN-0kR" secondAttribute="bottom" id="8gy-up-M8F"/>
+                                                <constraint firstItem="Qe7-JN-0kR" firstAttribute="trailing" secondItem="zqZ-2G-EDf" secondAttribute="trailing" id="B2r-Xo-Afj"/>
+                                                <constraint firstItem="0sy-m6-HRN" firstAttribute="leading" secondItem="auy-MI-8oD" secondAttribute="leadingMargin" id="Hz2-o7-PbV"/>
+                                                <constraint firstItem="Qe7-JN-0kR" firstAttribute="leading" secondItem="xux-uS-NVj" secondAttribute="leading" id="INX-fC-Isc"/>
+                                                <constraint firstItem="zqZ-2G-EDf" firstAttribute="leading" secondItem="Qe7-JN-0kR" secondAttribute="leading" id="KSX-SM-JNf"/>
+                                                <constraint firstItem="Qe7-JN-0kR" firstAttribute="top" secondItem="xux-uS-NVj" secondAttribute="bottom" id="MVy-w4-LBb"/>
+                                                <constraint firstAttribute="bottom" secondItem="zqZ-2G-EDf" secondAttribute="bottom" constant="8" id="dWQ-bX-mzo"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Qe7-JN-0kR" secondAttribute="trailing" constant="10" id="dhg-Z0-Djs"/>
+                                                <constraint firstItem="0sy-m6-HRN" firstAttribute="top" secondItem="auy-MI-8oD" secondAttribute="topMargin" id="fDk-7x-PWn"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xux-uS-NVj" secondAttribute="trailing" constant="20" symbolic="YES" id="l86-rg-iTo"/>
+                                                <constraint firstItem="xux-uS-NVj" firstAttribute="leading" secondItem="0sy-m6-HRN" secondAttribute="trailing" constant="10" id="ow5-aI-CQ1"/>
+                                                <constraint firstItem="xux-uS-NVj" firstAttribute="firstBaseline" secondItem="0sy-m6-HRN" secondAttribute="firstBaseline" id="ptA-Jj-Fhw"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="messageLabel" destination="Z3P-XU-Gih" id="z7n-yX-9QQ"/>
-                                            <outlet property="sourceLabel" destination="7Wz-UR-25m" id="bOo-gS-xxn"/>
-                                            <outlet property="timestampLabel" destination="KNt-Vh-aQ7" id="OVN-af-mRa"/>
+                                            <outlet property="annotationStackView" destination="zqZ-2G-EDf" id="Cvo-yI-65n"/>
+                                            <outlet property="messageLabel" destination="Qe7-JN-0kR" id="o9f-ra-9jW"/>
+                                            <outlet property="sourceLabel" destination="xux-uS-NVj" id="aYs-iu-XWo"/>
+                                            <outlet property="timestampLabel" destination="0sy-m6-HRN" id="WKN-b0-gV5"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
