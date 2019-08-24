@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		272AA7BE2311ADAB00D3DA3F /* full.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 272AA7BD2311ADAB00D3DA3F /* full.m4a */; };
 		27AA171E229F1E91002D0F1B /* TranscriptTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA171D229F1E91002D0F1B /* TranscriptTableViewCell.swift */; };
 		27AA1722229F1FD1002D0F1B /* air-ground-loop.json in Resources */ = {isa = PBXBuildFile; fileRef = 27AA1720229F1FD1002D0F1B /* air-ground-loop.json */; };
 		27AA1723229F1FD1002D0F1B /* flight-director-loop.json in Resources */ = {isa = PBXBuildFile; fileRef = 27AA1721229F1FD1002D0F1B /* flight-director-loop.json */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		272AA7BD2311ADAB00D3DA3F /* full.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = full.m4a; sourceTree = "<group>"; };
 		27AA171D229F1E91002D0F1B /* TranscriptTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptTableViewCell.swift; sourceTree = "<group>"; };
 		27AA1720229F1FD1002D0F1B /* air-ground-loop.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "air-ground-loop.json"; path = "../../script/air-ground-loop.json"; sourceTree = "<group>"; };
 		27AA1721229F1FD1002D0F1B /* flight-director-loop.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "flight-director-loop.json"; path = "../../script/flight-director-loop.json"; sourceTree = "<group>"; };
@@ -107,10 +109,17 @@
 				27ACF629229EFFF900B2E9B2 /* AppDelegate.swift */,
 				27EC8AF622A4319E00056467 /* full.m4a */,
 				27ACF62B229EFFF900B2E9B2 /* ViewController.swift */,
+<<<<<<< Updated upstream
 				27EB8BB122A4B77500D81B6E /* ViewController+DataSource.swift */,
 				27AA171D229F1E91002D0F1B /* TranscriptTableViewCell.swift */,
 				27AD5C3522A5AF6B0082DE8A /* Transcripts */,
 				27AD5C3322A5AF150082DE8A /* FontHelpers.swift */,
+=======
+				27AA171D229F1E91002D0F1B /* TranscriptTableViewCell.swift */,
+				27AA1724229F201B002D0F1B /* TranscriptEntry.swift */,
+				27AB43C922A0BF95006D7A5F /* Transcript.swift */,
+				272AA7BD2311ADAB00D3DA3F /* full.m4a */,
+>>>>>>> Stashed changes
 				27ACF62D229EFFF900B2E9B2 /* Main.storyboard */,
 				27ACF630229EFFFB00B2E9B2 /* Assets.xcassets */,
 				27ACF632229EFFFB00B2E9B2 /* LaunchScreen.storyboard */,
@@ -219,7 +228,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				27ACF634229EFFFB00B2E9B2 /* LaunchScreen.storyboard in Resources */,
+<<<<<<< Updated upstream
 				27EC8AF722A4319E00056467 /* full.m4a in Resources */,
+=======
+				272AA7BE2311ADAB00D3DA3F /* full.m4a in Resources */,
+>>>>>>> Stashed changes
 				27AA1723229F1FD1002D0F1B /* flight-director-loop.json in Resources */,
 				27ACF631229EFFFB00B2E9B2 /* Assets.xcassets in Resources */,
 				27ACF62F229EFFF900B2E9B2 /* Main.storyboard in Resources */,
