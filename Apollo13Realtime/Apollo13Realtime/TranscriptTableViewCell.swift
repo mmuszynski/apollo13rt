@@ -24,5 +24,7 @@ class TranscriptTableViewCell: UITableViewCell {
     @IBOutlet weak var timestampLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var sourceLabel: UILabel!
+    
+    @IBOutlet weak var annotationStackView: UIStackView!
 
 }
