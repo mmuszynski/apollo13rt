@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		272AA7BE2311ADAB00D3DA3F /* full.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 272AA7BD2311ADAB00D3DA3F /* full.m4a */; };
+		27A4611B24AE3BFF004888B8 /* air-ground-loop.lookup.json in Resources */ = {isa = PBXBuildFile; fileRef = 27A4611524AE3BFF004888B8 /* air-ground-loop.lookup.json */; };
+		27A4611C24AE3BFF004888B8 /* glossary.json in Resources */ = {isa = PBXBuildFile; fileRef = 27A4611624AE3BFF004888B8 /* glossary.json */; };
+		27A4611D24AE3BFF004888B8 /* flight-director-loop.json in Resources */ = {isa = PBXBuildFile; fileRef = 27A4611724AE3BFF004888B8 /* flight-director-loop.json */; };
+		27A4611E24AE3BFF004888B8 /* air-ground-loop.json in Resources */ = {isa = PBXBuildFile; fileRef = 27A4611824AE3BFF004888B8 /* air-ground-loop.json */; };
+		27A4611F24AE3BFF004888B8 /* glossary.lookup.json in Resources */ = {isa = PBXBuildFile; fileRef = 27A4611924AE3BFF004888B8 /* glossary.lookup.json */; };
+		27A4612024AE3BFF004888B8 /* flight-director-loop.lookup.json in Resources */ = {isa = PBXBuildFile; fileRef = 27A4611A24AE3BFF004888B8 /* flight-director-loop.lookup.json */; };
+		27A4612224AE3C12004888B8 /* TranscriptEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4612124AE3C12004888B8 /* TranscriptEntry.swift */; };
 		27AA171E229F1E91002D0F1B /* TranscriptTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA171D229F1E91002D0F1B /* TranscriptTableViewCell.swift */; };
-		27AA1722229F1FD1002D0F1B /* air-ground-loop.json in Resources */ = {isa = PBXBuildFile; fileRef = 27AA1720229F1FD1002D0F1B /* air-ground-loop.json */; };
-		27AA1723229F1FD1002D0F1B /* flight-director-loop.json in Resources */ = {isa = PBXBuildFile; fileRef = 27AA1721229F1FD1002D0F1B /* flight-director-loop.json */; };
-		27AA1725229F201B002D0F1B /* TranscriptEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA1724229F201B002D0F1B /* TranscriptEntry.swift */; };
-		27AA1727229F2103002D0F1B /* air-ground-loop.json in Resources */ = {isa = PBXBuildFile; fileRef = 27AA1720229F1FD1002D0F1B /* air-ground-loop.json */; };
 		27AB43CA22A0BF96006D7A5F /* Transcript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AB43C922A0BF95006D7A5F /* Transcript.swift */; };
 		27ACF62A229EFFF900B2E9B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ACF629229EFFF900B2E9B2 /* AppDelegate.swift */; };
 		27ACF62C229EFFF900B2E9B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ACF62B229EFFF900B2E9B2 /* ViewController.swift */; };
@@ -22,7 +25,6 @@
 		27ACF63F229EFFFB00B2E9B2 /* Apollo13RealtimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ACF63E229EFFFB00B2E9B2 /* Apollo13RealtimeTests.swift */; };
 		27AD5C3422A5AF150082DE8A /* FontHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AD5C3322A5AF150082DE8A /* FontHelpers.swift */; };
 		27EB8BB222A4B77500D81B6E /* ViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EB8BB122A4B77500D81B6E /* ViewController+DataSource.swift */; };
-		27EC8AF722A4319E00056467 /* full.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 27EC8AF622A4319E00056467 /* full.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,10 +39,14 @@
 
 /* Begin PBXFileReference section */
 		272AA7BD2311ADAB00D3DA3F /* full.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = full.m4a; sourceTree = "<group>"; };
+		27A4611524AE3BFF004888B8 /* air-ground-loop.lookup.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "air-ground-loop.lookup.json"; path = "../script/air-ground-loop.lookup.json"; sourceTree = "<group>"; };
+		27A4611624AE3BFF004888B8 /* glossary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = glossary.json; path = ../script/glossary.json; sourceTree = "<group>"; };
+		27A4611724AE3BFF004888B8 /* flight-director-loop.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "flight-director-loop.json"; path = "../script/flight-director-loop.json"; sourceTree = "<group>"; };
+		27A4611824AE3BFF004888B8 /* air-ground-loop.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "air-ground-loop.json"; path = "../script/air-ground-loop.json"; sourceTree = "<group>"; };
+		27A4611924AE3BFF004888B8 /* glossary.lookup.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = glossary.lookup.json; path = ../script/glossary.lookup.json; sourceTree = "<group>"; };
+		27A4611A24AE3BFF004888B8 /* flight-director-loop.lookup.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "flight-director-loop.lookup.json"; path = "../script/flight-director-loop.lookup.json"; sourceTree = "<group>"; };
+		27A4612124AE3C12004888B8 /* TranscriptEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranscriptEntry.swift; sourceTree = "<group>"; };
 		27AA171D229F1E91002D0F1B /* TranscriptTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptTableViewCell.swift; sourceTree = "<group>"; };
-		27AA1720229F1FD1002D0F1B /* air-ground-loop.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "air-ground-loop.json"; path = "../../script/air-ground-loop.json"; sourceTree = "<group>"; };
-		27AA1721229F1FD1002D0F1B /* flight-director-loop.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "flight-director-loop.json"; path = "../../script/flight-director-loop.json"; sourceTree = "<group>"; };
-		27AA1724229F201B002D0F1B /* TranscriptEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptEntry.swift; sourceTree = "<group>"; };
 		27AB43C922A0BF95006D7A5F /* Transcript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transcript.swift; sourceTree = "<group>"; };
 		27ACF626229EFFF900B2E9B2 /* Apollo13Realtime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apollo13Realtime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27ACF629229EFFF900B2E9B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,19 +81,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		27AA171F229F1F88002D0F1B /* Transcripts */ = {
+		27A4611424AE3BE6004888B8 /* Transcript Files */ = {
 			isa = PBXGroup;
 			children = (
-				27AA1720229F1FD1002D0F1B /* air-ground-loop.json */,
-				27AA1721229F1FD1002D0F1B /* flight-director-loop.json */,
+				27A4611824AE3BFF004888B8 /* air-ground-loop.json */,
+				27A4611524AE3BFF004888B8 /* air-ground-loop.lookup.json */,
+				27A4611724AE3BFF004888B8 /* flight-director-loop.json */,
+				27A4611A24AE3BFF004888B8 /* flight-director-loop.lookup.json */,
+				27A4611624AE3BFF004888B8 /* glossary.json */,
+				27A4611924AE3BFF004888B8 /* glossary.lookup.json */,
 			);
-			path = Transcripts;
+			name = "Transcript Files";
 			sourceTree = "<group>";
 		};
 		27ACF61D229EFFF900B2E9B2 = {
 			isa = PBXGroup;
 			children = (
-				27AA171F229F1F88002D0F1B /* Transcripts */,
+				27A4611424AE3BE6004888B8 /* Transcript Files */,
 				27ACF628229EFFF900B2E9B2 /* Apollo13Realtime */,
 				27ACF63D229EFFFB00B2E9B2 /* Apollo13RealtimeTests */,
 				27ACF627229EFFF900B2E9B2 /* Products */,
@@ -113,7 +123,6 @@
 				27AD5C3522A5AF6B0082DE8A /* Transcripts */,
 				27AD5C3322A5AF150082DE8A /* FontHelpers.swift */,
 				27AA171D229F1E91002D0F1B /* TranscriptTableViewCell.swift */,
-				27AA1724229F201B002D0F1B /* TranscriptEntry.swift */,
 				272AA7BD2311ADAB00D3DA3F /* full.m4a */,
 				27ACF62D229EFFF900B2E9B2 /* Main.storyboard */,
 				27ACF630229EFFFB00B2E9B2 /* Assets.xcassets */,
@@ -135,7 +144,7 @@
 		27AD5C3522A5AF6B0082DE8A /* Transcripts */ = {
 			isa = PBXGroup;
 			children = (
-				27AA1724229F201B002D0F1B /* TranscriptEntry.swift */,
+				27A4612124AE3C12004888B8 /* TranscriptEntry.swift */,
 				27AB43C922A0BF95006D7A5F /* Transcript.swift */,
 			);
 			path = Transcripts;
@@ -222,12 +231,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27A4612024AE3BFF004888B8 /* flight-director-loop.lookup.json in Resources */,
+				27A4611D24AE3BFF004888B8 /* flight-director-loop.json in Resources */,
 				27ACF634229EFFFB00B2E9B2 /* LaunchScreen.storyboard in Resources */,
+				27A4611B24AE3BFF004888B8 /* air-ground-loop.lookup.json in Resources */,
+				27A4611E24AE3BFF004888B8 /* air-ground-loop.json in Resources */,
+				27A4611F24AE3BFF004888B8 /* glossary.lookup.json in Resources */,
 				272AA7BE2311ADAB00D3DA3F /* full.m4a in Resources */,
-				27AA1723229F1FD1002D0F1B /* flight-director-loop.json in Resources */,
+				27A4611C24AE3BFF004888B8 /* glossary.json in Resources */,
 				27ACF631229EFFFB00B2E9B2 /* Assets.xcassets in Resources */,
 				27ACF62F229EFFF900B2E9B2 /* Main.storyboard in Resources */,
-				27AA1722229F1FD1002D0F1B /* air-ground-loop.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,7 +248,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27AA1727229F2103002D0F1B /* air-ground-loop.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,12 +258,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27AA1725229F201B002D0F1B /* TranscriptEntry.swift in Sources */,
 				27EB8BB222A4B77500D81B6E /* ViewController+DataSource.swift in Sources */,
 				27AB43CA22A0BF96006D7A5F /* Transcript.swift in Sources */,
 				27ACF62C229EFFF900B2E9B2 /* ViewController.swift in Sources */,
 				27AA171E229F1E91002D0F1B /* TranscriptTableViewCell.swift in Sources */,
 				27AD5C3422A5AF150082DE8A /* FontHelpers.swift in Sources */,
+				27A4612224AE3C12004888B8 /* TranscriptEntry.swift in Sources */,
 				27ACF62A229EFFF900B2E9B2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
