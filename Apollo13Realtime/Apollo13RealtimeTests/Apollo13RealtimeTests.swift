@@ -21,4 +21,22 @@ class Apollo13RealtimeTests: XCTestCase {
         XCTAssert(!transcripts.isEmpty)
     }
     
+    func testAnnotation() {
+        let entries = Transcript.airGroundLoop
+        let firstAnnotated = entries.first(where: { $0.annotations != nil })
+        guard let message = firstAnnotated?.message else {
+            XCTFail("Couldn't find any annotated messages")
+            return
+        }
+        
+        guard let start = message.firstIndex(of: "{"),
+              let end = message.firstIndex(of: "}") else {
+            XCTFail("End index before start index")
+            return
+        }
+        
+        let annotation = message[start..<end]
+        let unchecked = String(message[end...])
+        
+    }
 }

@@ -48,3 +48,10 @@ extension Transcript: Collection {
     }
     
 }
+
+extension Transcript {
+    static var airGroundLoop: Transcript {
+        let url = Bundle.main.url(forResource: "air-ground-loop", withExtension: "json")!
+        return try! Transcript(url: url)
+    }
+}

@@ -7,6 +7,9 @@
 //
 
 import SwiftUI
+import os
+
+var transcriptCellLogger = Logger(subsystem: "com.mmuszynski.apollo13rt", category: "TranscriptCell")
 
 func annotatedText(from message: String) -> Text {
     guard let start = message.firstIndex(of: "{"),
@@ -45,12 +48,5 @@ struct TranscriptCell_Previews: PreviewProvider {
             TranscriptCell(entry: Transcript.airGroundLoop.first(where: {$0.message.contains("{")})!)
                 .previewLayout(.sizeThatFits)
         }
-    }
-}
-
-extension Transcript {
-    static var airGroundLoop: Transcript {
-        let url = Bundle.main.url(forResource: "air-ground-loop", withExtension: "json")!
-        return try! Transcript(url: url)
     }
 }
