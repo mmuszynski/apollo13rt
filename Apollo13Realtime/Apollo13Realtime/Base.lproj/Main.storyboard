@@ -29,8 +29,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="653" height="177"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eqw-kn-kMf">
-                                                    <rect key="frame" x="83.5" y="28.5" width="540" height="70"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eqw-kn-kMf">
+                                                    <rect key="frame" x="83.5" y="28.5" width="559.5" height="70"/>
                                                     <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In scelerisque eros sit amet quam placerat, vel semper elit hendrerit. Etiam vestibulum metus turpis, sed ultrices dui pellentesque vel. Phasellus sodales nisi nisl, ac aliquet urna blandit vitae. Nullam quis lorem in diam venenatis condimentum in non eros.</string>
                                                     <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="15"/>
                                                     <nil key="textColor"/>
@@ -49,7 +49,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6ha-5x-tWo">
-                                                    <rect key="frame" x="83.5" y="98.5" width="540" height="70.5"/>
+                                                    <rect key="frame" x="83.5" y="98.5" width="559.5" height="70.5"/>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
@@ -91,8 +91,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="653" height="176.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qe7-JN-0kR">
-                                                    <rect key="frame" x="97.5" y="28.5" width="542" height="105"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qe7-JN-0kR">
+                                                    <rect key="frame" x="97.5" y="28.5" width="545.5" height="105"/>
                                                     <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In scelerisque eros sit amet quam placerat, vel semper elit hendrerit. Etiam vestibulum metus turpis, sed ultrices dui pellentesque vel. Phasellus sodales nisi nisl, ac aliquet urna blandit vitae. Nullam quis lorem in diam venenatis condimentum in non eros.</string>
                                                     <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
                                                     <nil key="textColor"/>
@@ -111,7 +111,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zqZ-2G-EDf">
-                                                    <rect key="frame" x="97.5" y="133.5" width="542" height="35"/>
+                                                    <rect key="frame" x="97.5" y="133.5" width="545.5" height="35"/>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
@@ -195,38 +195,43 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ysp-pC-l2p">
-                                <rect key="frame" x="503" y="82" width="360" height="31"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="200774" minValue="200774" maxValue="223323" translatesAutoresizingMaskIntoConstraints="NO" id="ysp-pC-l2p">
+                                <rect key="frame" x="263" y="82" width="850.5" height="31"/>
+                                <connections>
+                                    <action selector="transportSliderDragBegan:" destination="BYZ-38-t0r" eventType="touchDown" id="gVn-BM-5iH"/>
+                                    <action selector="transportSliderDragEnded:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dH7-gn-SmU"/>
+                                    <action selector="transportSliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="roU-1w-EhQ"/>
+                                </connections>
                             </slider>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="ncB-r5-2h6">
-                                <rect key="frame" x="20" y="44" width="165.5" height="58.5"/>
+                                <rect key="frame" x="20" y="44" width="205" height="57"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="55:46:14" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tnG-49-ehA">
-                                        <rect key="frame" x="0.0" y="0.0" width="121" height="36"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="55:46:13" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tnG-49-ehA">
+                                        <rect key="frame" x="0.0" y="0.0" width="144.5" height="35"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mission Elapsed Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="buF-mi-uVH">
-                                        <rect key="frame" x="0.0" y="38" width="165.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="37" width="205" height="20"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="WYU-Fz-sNh">
-                                <rect key="frame" x="1194.5" y="44" width="151.5" height="58.5"/>
+                                <rect key="frame" x="1151.5" y="44" width="194.5" height="57"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-01:10:34" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVd-yD-3sr">
-                                        <rect key="frame" x="21.5" y="0.0" width="130" height="36"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:08:39" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVd-yD-3sr">
+                                        <rect key="frame" x="50" y="0.0" width="144.5" height="35"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Special Event Timer" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWD-nY-BMy">
-                                        <rect key="frame" x="0.0" y="38" width="151.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Until Accident" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWD-nY-BMy">
+                                        <rect key="frame" x="0.0" y="37" width="194.5" height="20"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -236,29 +241,32 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="WYU-Fz-sNh" firstAttribute="top" secondItem="ncB-r5-2h6" secondAttribute="top" id="0w8-89-lfs"/>
-                            <constraint firstItem="ysp-pC-l2p" firstAttribute="leading" secondItem="22M-Sb-fSU" secondAttribute="leading" id="A3N-mz-3Xc"/>
                             <constraint firstItem="BlS-PJ-JMt" firstAttribute="width" secondItem="LaO-pH-m4Q" secondAttribute="width" id="CsR-ut-S2K"/>
                             <constraint firstItem="22M-Sb-fSU" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Gi9-Ev-m0r"/>
+                            <constraint firstItem="LWD-nY-BMy" firstAttribute="leading" secondItem="ysp-pC-l2p" secondAttribute="trailing" constant="40" id="KTO-WY-OPH"/>
                             <constraint firstItem="LaO-pH-m4Q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Q1U-YK-Sa7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WYU-Fz-sNh" secondAttribute="trailing" constant="20" id="Twx-BN-XPB"/>
                             <constraint firstItem="ncB-r5-2h6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="dBt-Or-b4t"/>
                             <constraint firstItem="BlS-PJ-JMt" firstAttribute="leading" secondItem="LaO-pH-m4Q" secondAttribute="trailing" constant="20" id="hH9-0L-f00"/>
                             <constraint firstItem="ncB-r5-2h6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="hwa-Vt-chq"/>
                             <constraint firstItem="LaO-pH-m4Q" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="itb-Cn-jp7"/>
-                            <constraint firstItem="ysp-pC-l2p" firstAttribute="trailing" secondItem="22M-Sb-fSU" secondAttribute="trailing" id="joj-KT-nA1"/>
                             <constraint firstItem="BlS-PJ-JMt" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="k2v-4n-u8N"/>
                             <constraint firstItem="LaO-pH-m4Q" firstAttribute="top" secondItem="ysp-pC-l2p" secondAttribute="bottom" constant="40" id="lcV-48-KoQ"/>
                             <constraint firstItem="BlS-PJ-JMt" firstAttribute="top" secondItem="ysp-pC-l2p" secondAttribute="bottom" constant="40" id="uxv-fl-Dbr"/>
                             <constraint firstItem="22M-Sb-fSU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="v6F-Ad-7ZJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BlS-PJ-JMt" secondAttribute="trailing" constant="20" id="v7l-fG-Yrd"/>
                             <constraint firstItem="ysp-pC-l2p" firstAttribute="top" secondItem="22M-Sb-fSU" secondAttribute="bottom" constant="8" id="yk1-ht-sRt"/>
+                            <constraint firstItem="ysp-pC-l2p" firstAttribute="leading" secondItem="ncB-r5-2h6" secondAttribute="trailing" constant="40" id="z3Y-ME-ufe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="airGroundTableView" destination="LaO-pH-m4Q" id="kzJ-Ry-4Xa"/>
+                        <outlet property="audioTransportSlider" destination="ysp-pC-l2p" id="aIY-bi-yfd"/>
                         <outlet property="flightDirectorTableView" destination="BlS-PJ-JMt" id="veG-dA-nUu"/>
                         <outlet property="missionElapsedTimeLabel" destination="tnG-49-ehA" id="giK-OV-20D"/>
+                        <outlet property="specialEventDescriptionLabel" destination="LWD-nY-BMy" id="6DZ-i6-MXY"/>
+                        <outlet property="specialEventTimeLabel" destination="GVd-yD-3sr" id="mHj-gz-fQb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

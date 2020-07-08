@@ -55,6 +55,10 @@ struct TranscriptEntry: Codable {
             attributed.addAttribute(.font, value: UIFont.systemFont(ofSize: UIFont.smallSystemFontSize), range: NSRange(location: range.upperBound, length: 1))
         }
         
+        let hyphenation = NSMutableParagraphStyle()
+        hyphenation.hyphenationFactor = 1.0
+        attributed.addAttribute(.paragraphStyle, value: hyphenation, range: NSRange(0..<attributed.length))
+        
         return attributed
     }
 }

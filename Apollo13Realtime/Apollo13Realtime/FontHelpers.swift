@@ -25,4 +25,19 @@ extension UIFont {
         let descriptor = UIFontDescriptor(name: "Menlo", size: 15.0)
         return UIFont(descriptor: descriptor.withSymbolicTraits(.traitItalic)!, size: 0)
     }
+    
+    fileprivate static var trebuchetMSFontDescriptor = UIFontDescriptor(name: "Trebuchet MS", size: 15.0)
+    
+    static var trebuchetMSRegular15: UIFont {
+        return UIFont(descriptor: trebuchetMSFontDescriptor, size: 0)
+    }
+    static var trebuchetMSMonoSpace15: UIFont {
+        return UIFont(descriptor: trebuchetMSFontDescriptor.withSymbolicTraits(.traitMonoSpace)!, size: 0)
+    }
+    static var trebuchetMSBold15: UIFont {
+        return UIFont(descriptor: trebuchetMSFontDescriptor.withSymbolicTraits(.traitBold)!, size: 0)
+    }
+    static var trebuchetMSItalic15: UIFont {
+        return UIFont(descriptor: trebuchetMSFontDescriptor.withSymbolicTraits(.traitItalic)!, size: 0)
+    }
 }

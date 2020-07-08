@@ -9,6 +9,24 @@
 import UIKit
 import AVFoundation
 
+fileprivate extension CMTime {
+    init(seconds: TimeInterval) {
+        self.init(seconds: seconds, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
+    }
+}
+
+fileprivate extension AVPlayer {
+    func zeroToleranceSeek(to time: CMTime) {
+        self.seek(to: time, toleranceBefore: .zero, toleranceAfter: .zero)
+    }
+    func zeroToleranceSeekAhead(_ seconds: TimeInterval) {
+        self.seek(to: self.currentTime() + CMTime(seconds: seconds), toleranceBefore: .zero, toleranceAfter: .zero)
+    }
+    func zeroToleranceSeekBack(_ seconds: TimeInterval) {
+        self.seek(to: self.currentTime() - CMTime(seconds: seconds), toleranceBefore: .zero, toleranceAfter: .zero)
+    }
+}
+
 class ViewController: UIViewController {
     
     var player: AVPlayer!
@@ -33,6 +51,19 @@ class ViewController: UIViewController {
     func loadFlightDirectorLoop() throws {
         let url = Bundle.main.url(forResource: "flight-director-loop", withExtension: "json")!
         flightDirectorLoop = try Transcript(url: url)
+    }
+    
+    /// Special events that are displayed in the `specialEventTimer`
+    ///
+    /// There are a number of events that are useful to display such as "Time Until Accident", "Time Since Accident", etc
+    /// These are wrapped in `Event` structs, which can be iterated over to provide the proper context in the special event timer
+    var specialEvents: [Event]  = []
+    
+    /// Loads the special events that are to be displayed with the event timer
+    func loadSpecialEvents() throws {
+        let decoder = JSONDecoder()
+        let url = Bundle.main.url(forResource: "EventList", withExtension: "json")!
+        specialEvents = try decoder.decode(Array<Event>.self, from: Data(contentsOf: url))
     }
     
     /// Apple suggests that we dispose of these when we are done with them
@@ -61,6 +92,7 @@ class ViewController: UIViewController {
         let timeScale = CMTimeScale(NSEC_PER_SEC)
         let token = player.addPeriodicTimeObserver(forInterval: CMTime(seconds: 0.5, preferredTimescale: timeScale), queue: .main) { (_) in
             self.updateMETLabel()
+            self.updateTransportControls()
         }
         observerTokens.append(token)
     }
@@ -87,6 +119,9 @@ class ViewController: UIViewController {
     
         try! loadAirGroundLoopTranscripts()
         try! loadFlightDirectorLoop()
+        try! loadSpecialEvents()
+        
+        specialEventTimeLabel.font = UIFontMetrics(forTextStyle: .headline).scaledFont(for: specialEventTimeLabel.font)
         
         //load player
         let audioURL = Bundle.main.url(forResource: "full", withExtension: "m4a")!
@@ -145,7 +180,8 @@ class ViewController: UIViewController {
         }
         
         if let path = paths.first {
-            tableView.scrollToRow(at: path, at: .top, animated: true)
+            guard path.row > 0 else { return }
+            tableView.scrollToRow(at: IndexPath(row: path.row-1, section: 0), at: .top, animated: true)
         }
     }
     
@@ -178,6 +214,9 @@ class ViewController: UIViewController {
     /// The MET label itself
     @IBOutlet var missionElapsedTimeLabel: UILabel!
     
+    @IBOutlet var specialEventTimeLabel: UILabel!
+    @IBOutlet var specialEventDescriptionLabel: UILabel!
+    
     /// Updates the Mission Elapsed Time Label based on the time of the audio player
     func updateMETLabel() {
         let missionElapsedTime = self.playerTimeInMET
@@ -185,6 +224,14 @@ class ViewController: UIViewController {
             return
         }
         self.missionElapsedTimeLabel.text = missionElapsedTimeString
+        
+        if let currentEvent = specialEvents.filter({ (event) -> Bool in
+            event.metBegin < playerTimeInMET
+        }).last {
+            specialEventDescriptionLabel.text = currentEvent.description
+            let currentEventTime = currentEvent.displayTime(at: playerTimeInMET)
+            specialEventTimeLabel.text = "0" + self.timeFormatter.string(from: currentEventTime)!
+        }
     }
     
     var highlightedAirGroundIDs = [Int]()
@@ -204,7 +251,36 @@ class ViewController: UIViewController {
         highlightRows(in: flightDirectorTableView, withIds: highlightedFlightDirectorIDs)
     }
     
-    // MARK: Player Controls
+    // MARK: Transport Controls
+    @IBOutlet weak var audioTransportSlider: UISlider!
+    var isDraggingSlider: Bool = false
+    var sliderDragValue: Float = 0
+    
+    func updateTransportControls() {
+        guard self.isDraggingSlider == false else { return }
+        let currentTime = playerTimeInMET
+        audioTransportSlider.value = Float(currentTime)
+    }
+    
+    @IBAction func transportSliderDragBegan(_ sender: Any) {
+        isDraggingSlider = true
+        sliderDragValue = audioTransportSlider.value
+    }
+    
+    @IBAction func transportSliderDragEnded(_ sender: Any) {
+        isDraggingSlider = false
+    }
+    
+    @IBAction func transportSliderValueChanged(_ sender: Any) {
+        let playertime = TimeInterval(audioTransportSlider.value) - audioOffsetToMET
+        player.seek(to: CMTime(seconds: playertime), toleranceBefore: .zero, toleranceAfter: .zero)
+        
+        if fabsf(audioTransportSlider.value - sliderDragValue) > 30 {
+            updateHighlighting()
+            sliderDragValue = audioTransportSlider.value
+        }
+    }
+    
     @IBAction func togglePlayer(_ sender: Any) {
         guard let player = player else { return }
         
@@ -221,37 +297,37 @@ class ViewController: UIViewController {
     }
     
     @IBAction func playerAheadShortest(_ sender: Any) {
-        player.seek(to: player.currentTime() + CMTime(seconds: 5, preferredTimescale: 10000000), toleranceBefore: .zero, toleranceAfter: .zero)
+        player.zeroToleranceSeekAhead(5)
         updateMETLabel()
         updateHighlighting()
     }
     
     @IBAction func playerBackShortest(_ sender: Any) {
-        player.seek(to: player.currentTime() + CMTime(seconds: -5, preferredTimescale: 10000000), toleranceBefore: .zero, toleranceAfter: .zero)
+        player.zeroToleranceSeekBack(5)
         updateMETLabel()
         updateHighlighting()
     }
     
     @IBAction func playerAheadShort(_ sender: Any) {
-        player.seek(to: player.currentTime() + CMTime(seconds: 15, preferredTimescale: 10000000), toleranceBefore: .zero, toleranceAfter: .zero)
+        player.zeroToleranceSeekAhead(15)
         updateMETLabel()
         updateHighlighting()
     }
     
     @IBAction func playerBackShort(_ sender: Any) {
-        player.seek(to: player.currentTime() + CMTime(seconds: -15, preferredTimescale: 10000000), toleranceBefore: .zero, toleranceAfter: .zero)
+        player.zeroToleranceSeekBack(15)
         updateMETLabel()
         updateHighlighting()
     }
     
     @IBAction func playerAheadLong(_ sender: Any) {
-        player.seek(to: player.currentTime() + CMTime(seconds: 30, preferredTimescale: 10000000), toleranceBefore: .zero, toleranceAfter: .zero)
+        player.zeroToleranceSeekAhead(30)
         updateMETLabel()
         updateHighlighting()
     }
     
     @IBAction func playerBackLong(_ sender: Any) {
-        player.seek(to: player.currentTime() + CMTime(seconds: -30, preferredTimescale: 10000000), toleranceBefore: .zero, toleranceAfter: .zero)
+        player.zeroToleranceSeekBack(30)
         updateMETLabel()
         updateHighlighting()
     }

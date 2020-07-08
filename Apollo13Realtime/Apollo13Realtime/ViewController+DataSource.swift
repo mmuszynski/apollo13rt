@@ -48,8 +48,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         entry.tokens?.enumerated().forEach({ (index, annotation) in
             let label = UILabel()
             
-            let fontDescriptor = cell.messageLabel.font.fontDescriptor.withSymbolicTraits(.traitItalic)
-            label.font = UIFont(descriptor: fontDescriptor!, size: 0)
+            label.font = UIFontMetrics(forTextStyle: .footnote).scaledFont(for: .trebuchetMSItalic15)
             label.numberOfLines = 0
             
             label.text = "\(index+1): " + annotation
@@ -58,8 +57,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         entry.annotations?.forEach({ (annotation) in
             let label = UILabel()
             
-            let fontDescriptor = cell.messageLabel.font.fontDescriptor.withSymbolicTraits(.traitItalic)
-            label.font = UIFont(descriptor: fontDescriptor!, size: 0)
+            label.font = UIFontMetrics(forTextStyle: .footnote).scaledFont(for: .trebuchetMSItalic15)
             label.numberOfLines = 0
             
             label.text = annotation
