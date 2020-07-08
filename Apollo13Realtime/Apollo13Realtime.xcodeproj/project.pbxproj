@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2704370424AEDBA800C9B61B /* TranscriptCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2704370324AEDBA800C9B61B /* TranscriptCell.swift */; };
 		272AA7BE2311ADAB00D3DA3F /* full.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 272AA7BD2311ADAB00D3DA3F /* full.m4a */; };
 		27A4611B24AE3BFF004888B8 /* air-ground-loop.lookup.json in Resources */ = {isa = PBXBuildFile; fileRef = 27A4611524AE3BFF004888B8 /* air-ground-loop.lookup.json */; };
 		27A4611C24AE3BFF004888B8 /* glossary.json in Resources */ = {isa = PBXBuildFile; fileRef = 27A4611624AE3BFF004888B8 /* glossary.json */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2704370324AEDBA800C9B61B /* TranscriptCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptCell.swift; sourceTree = "<group>"; };
 		272AA7BD2311ADAB00D3DA3F /* full.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = full.m4a; sourceTree = "<group>"; };
 		27A4611524AE3BFF004888B8 /* air-ground-loop.lookup.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "air-ground-loop.lookup.json"; path = "../script/air-ground-loop.lookup.json"; sourceTree = "<group>"; };
 		27A4611624AE3BFF004888B8 /* glossary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = glossary.json; path = ../script/glossary.json; sourceTree = "<group>"; };
@@ -60,7 +62,7 @@
 		27ACF640229EFFFB00B2E9B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27AD5C3322A5AF150082DE8A /* FontHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontHelpers.swift; sourceTree = "<group>"; };
 		27EB8BB122A4B77500D81B6E /* ViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+DataSource.swift"; sourceTree = "<group>"; };
-		27EC8AF622A4319E00056467 /* full.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = full.m4a; path = ../../../../../Desktop/full.m4a; sourceTree = "<group>"; };
+		27EC8AF622A4319E00056467 /* full.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = full.m4a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2704370524AEDBF400C9B61B /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				2704370324AEDBA800C9B61B /* TranscriptCell.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
 		27A4611424AE3BE6004888B8 /* Transcript Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +107,7 @@
 		27ACF61D229EFFF900B2E9B2 = {
 			isa = PBXGroup;
 			children = (
+				2704370524AEDBF400C9B61B /* SwiftUI */,
 				27A4611424AE3BE6004888B8 /* Transcript Files */,
 				27ACF628229EFFF900B2E9B2 /* Apollo13Realtime */,
 				27ACF63D229EFFFB00B2E9B2 /* Apollo13RealtimeTests */,
@@ -194,8 +205,8 @@
 		27ACF61E229EFFF900B2E9B2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Mike Muszynski";
 				TargetAttributes = {
 					27ACF625229EFFF900B2E9B2 = {
@@ -259,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27EB8BB222A4B77500D81B6E /* ViewController+DataSource.swift in Sources */,
+				2704370424AEDBA800C9B61B /* TranscriptCell.swift in Sources */,
 				27AB43CA22A0BF96006D7A5F /* Transcript.swift in Sources */,
 				27ACF62C229EFFF900B2E9B2 /* ViewController.swift in Sources */,
 				27AA171E229F1E91002D0F1B /* TranscriptTableViewCell.swift in Sources */,
@@ -332,6 +344,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -357,7 +370,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -393,6 +406,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -412,7 +426,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -429,6 +443,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DF288G8ZJ6;
 				INFOPLIST_FILE = Apollo13Realtime/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -447,6 +462,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DF288G8ZJ6;
 				INFOPLIST_FILE = Apollo13Realtime/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
