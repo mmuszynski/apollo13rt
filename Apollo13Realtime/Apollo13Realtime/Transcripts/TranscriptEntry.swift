@@ -20,6 +20,59 @@ struct TranscriptEntry: Codable {
     var annotations: [String]?
     var tokens: [String]?
     
+    ///
+    enum TranscriptPart {
+        case plain(_ text: String)
+        case annotated(_ text: String, annotation: String)
+    }
+    
+    var messageAnnotationRanges: [ClosedRange<String.Index>] {
+        var message = self.message
+        var ranges = [ClosedRange<String.Index>]()
+        
+        while let annotationStart = message.firstIndex(of: "{") {
+            guard let annotationEnd = message.firstIndex(of: "}") else {
+                break
+            }
+            
+            let range = annotationStart...annotationEnd
+            message = String(message[annotationEnd...].dropFirst())
+            
+            ranges.append(range)
+        }
+        
+        return ranges
+    }
+    
+    /// Splits the message into parts that make it easier to annotate
+    var messageInParts: [TranscriptPart] {
+        precondition(messageAnnotationRanges.count == (tokens?.count ?? 0))
+        
+        var parts = [TranscriptPart]()
+        
+        for i in 0..<messageAnnotationRanges.count {
+            let range = messageAnnotationRanges[i]
+            
+            if i == 0 {
+                let startMessage = String(message[message.startIndex..<range.lowerBound])
+                if startMessage != "" {
+                    parts.append(.plain(startMessage))
+                }
+            }
+            
+            let annotatedMessage = String(message[range])
+            parts.append(.annotated(annotatedMessage, annotation: tokens![i]))
+            
+            if i == messageAnnotationRanges.count - 1 {
+                let endMessage = String(message[range.upperBound..<message.endIndex])
+                if endMessage != "" {
+                    parts.append(.plain(endMessage))
+                }
+            }
+        }
+        return parts
+    }
+    
     var usefulEnd: Int? {
         if let trueEnd = end, start != trueEnd { return trueEnd }
         guard let start = start else { return nil }

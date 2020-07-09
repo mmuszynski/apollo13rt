@@ -10,16 +10,6 @@ import XCTest
 @testable import Apollo13Realtime
 
 class Apollo13RealtimeTests: XCTestCase {
-
-    func testDecodingJSON() {
-        let bundle = Bundle(for: self.classForCoder)
-        let url = bundle.url(forResource: "air-ground-loop", withExtension: "json")!
-        let data = try! Data(contentsOf: url)
-        
-        let decoder = JSONDecoder()
-        let transcripts = try! decoder.decode([TranscriptEntry].self, from: data)
-        XCTAssert(!transcripts.isEmpty)
-    }
     
     func testAnnotation() {
         let entries = Transcript.airGroundLoop
@@ -29,14 +19,13 @@ class Apollo13RealtimeTests: XCTestCase {
             return
         }
         
-        guard let start = message.firstIndex(of: "{"),
-              let end = message.firstIndex(of: "}") else {
-            XCTFail("End index before start index")
-            return
+        XCTAssertEqual(firstAnnotated?.messageInParts.count, 3)
+    }
+    
+    func testAnnotationPrecondition() {
+        let entries = Transcript.airGroundLoop
+        for entry in entries {
+            let _ = entry.messageInParts
         }
-        
-        let annotation = message[start..<end]
-        let unchecked = String(message[end...])
-        
     }
 }
