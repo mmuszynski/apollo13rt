@@ -11,15 +11,22 @@ import os
 
 var transcriptCellLogger = Logger(subsystem: "com.mmuszynski.apollo13rt", category: "TranscriptCell")
 
-func annotatedText(from message: String) -> Text {
-    guard let start = message.firstIndex(of: "{"),
-          let end = message.firstIndex(of: "}") else {
-        return Text(message)
+func annotatedText(for entry: TranscriptEntry) -> Text {
+    var text = Text("")
+    
+    for part in entry.messageInParts {
+        switch part {
+        case .plain(let message):
+            text = text + Text(message)
+        case .annotated(let message, _, let index):
+            text = text + Text(message).underline()
+            text = text + Text("\(index + 1)")
+                .font(.caption)
+                .baselineOffset(6.0)
+        }
     }
     
-    let annotation = message[start..<end]
-    let unchecked = String(message[end...])
-    return Text(annotation).underline() + annotatedText(from: unchecked)
+    return text
 }
 
 struct TranscriptCell: View {
@@ -30,10 +37,14 @@ struct TranscriptCell: View {
             Text("3:30:04")
             VStack(alignment: .leading) {
                 Text(entry.source)
-                Text(entry.message)
-                annotatedText(from: entry.message)
-                ForEach(entry.annotations ?? [], id: \.hash) { string in
+                annotatedText(for: entry)
+                ForEach(entry.tokens ?? [], id: \.hash) { string in
+                    Text("\((entry.tokens?.firstIndex(of: string) ?? 0) + 1): ")
+                        .font(.caption)
+                        .italic() +
                     Text(string)
+                        .font(.caption)
+                        .italic()
                 }
             }
         }

@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import os
 
 //{"id":1,"start":200791,"end":200791,"source":"CAPCOM","line":4,"message":"Thank you, 13."}
 
 struct TranscriptEntry: Codable {
+    static var logger = Logger(subsystem: "com.mmuszynski.apollo13rt", category: "TranscriptEntry")
+    
     var id: Int
     var start: Int?
     var end: Int?
@@ -20,10 +23,9 @@ struct TranscriptEntry: Codable {
     var annotations: [String]?
     var tokens: [String]?
     
-    ///
     enum TranscriptPart {
         case plain(_ text: String)
-        case annotated(_ text: String, annotation: String)
+        case annotated(_ text: String, annotation: String, index: Int)
     }
     
     var messageAnnotationRanges: [ClosedRange<String.Index>] {
@@ -47,30 +49,56 @@ struct TranscriptEntry: Codable {
     /// Splits the message into parts that make it easier to annotate
     var messageInParts: [TranscriptPart] {
         precondition(messageAnnotationRanges.count == (tokens?.count ?? 0))
-        
         var parts = [TranscriptPart]()
         
-        for i in 0..<messageAnnotationRanges.count {
-            let range = messageAnnotationRanges[i]
-            
-            if i == 0 {
-                let startMessage = String(message[message.startIndex..<range.lowerBound])
-                if startMessage != "" {
-                    parts.append(.plain(startMessage))
-                }
-            }
-            
-            let annotatedMessage = String(message[range])
-            parts.append(.annotated(annotatedMessage, annotation: tokens![i]))
-            
-            if i == messageAnnotationRanges.count - 1 {
-                let endMessage = String(message[range.upperBound..<message.endIndex])
-                if endMessage != "" {
-                    parts.append(.plain(endMessage))
-                }
+        let components = message.components(separatedBy: CharacterSet(charactersIn: "{}")).filter({ $0 != "" })
+        let token = message.first == "{" ? 1 : 0
+        
+        //the first part was a token
+        var tokenIndex = 0
+        for (i, string) in components.enumerated() {
+            if i % 2 == token {
+                parts.append(.plain(string))
+            } else {
+                parts.append(.annotated(string, annotation: tokens![tokenIndex], index: tokenIndex))
+                tokenIndex += 1
             }
         }
+        
         return parts
+        
+        //        var parts = [TranscriptPart]()
+        //
+        //        for i in 0..<messageAnnotationRanges.count {
+        //            let range = messageAnnotationRanges[i]
+        //
+        //            if i == 0 {
+        //                let startMessage = String(message[message.startIndex..<range.lowerBound])
+        //                if startMessage != "" {
+        //                    let stripped = startMessage.replacingOccurrences(of: "{", with: "").replacingOccurrences(of: "}", with: "")
+        //                    parts.append(.plain(stripped))
+        //
+        //                    TranscriptEntry.logger.debug("Started with plain message: \(stripped)")
+        //                }
+        //            }
+        //
+        //            let annotatedMessage = String(message[range])
+        //            let stripped = annotatedMessage.replacingOccurrences(of: "{", with: "").replacingOccurrences(of: "}", with: "")
+        //            parts.append(.annotated(stripped, annotation: tokens![i], index: i))
+        //            TranscriptEntry.logger.debug("Found token message: \(stripped)")
+        //
+        //            if i == messageAnnotationRanges.count - 1 {
+        //                let endMessage = String(message[range.upperBound..<message.endIndex])
+        //                if endMessage != "" {
+        //                    let stripped = endMessage.replacingOccurrences(of: "{", with: "").replacingOccurrences(of: "}", with: "")
+        //                    parts.append(.plain(stripped))
+        //                    TranscriptEntry.logger.debug("Finished with plain message: \(stripped)")
+        //                }
+        //            }
+        //        }
+        //
+        //
+        //        return parts
     }
     
     var usefulEnd: Int? {

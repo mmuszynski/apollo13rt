@@ -13,7 +13,7 @@ class Apollo13RealtimeTests: XCTestCase {
     
     func testAnnotation() {
         let entries = Transcript.airGroundLoop
-        let firstAnnotated = entries.first(where: { $0.annotations != nil })
+        let firstAnnotated = entries.first(where: { $0.tokens != nil })
         guard let message = firstAnnotated?.message else {
             XCTFail("Couldn't find any annotated messages")
             return
