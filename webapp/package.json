@@ -1,17 +1,19 @@
 {
   "name": "apollo13-realtime",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
-    "jquery": "~3.1",
-    "janus": "~0.3",
-    "janus-stdlib": "~0.2",
+    "jquery": "~3.4",
+    "janus": "~0.5",
+    "janus-inspect": "~0.5",
+    "janus-stdlib": "~0.5",
     "marked": "~0.3",
     "clipboard-copy": "~1"
   },
   "devDependencies": {
     "livescript": "~1.5",
-    "node-sass": "~3",
+    "node-sass": "~4",
+    "domino": "~2",
     "browserify": "~14",
     "uglify-js": "~3"
   }

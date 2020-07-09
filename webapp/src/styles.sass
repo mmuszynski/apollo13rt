@@ -1,5 +1,6 @@
 
 @import 'styles/common.sass'
+@import 'styles/keyframes.sass'
 
 // UTIL
 
@@ -121,11 +122,6 @@ a
 
 // COMPONENTS
 
-@keyframes fade-out
-  0%
-    opacity: 1
-  100%
-    opacity: 0.1
 .player
   background-color: $color-box-bg
   border-bottom: 0.1em solid $color-light-border
@@ -697,12 +693,11 @@ a
     font-size: 1.1em
     font-weight: bold
 
-    .synonyms ul
+    .synonyms .janus-list
       display: inline
       font-weight: normal
 
-      li
-        display: inline
+      span
         &:after
           content: ', '
         &:first-child
@@ -984,24 +979,6 @@ header
 
 // EXHIBIT LAYOUT
 
-@keyframes toc-down
-  0%
-    max-height: 12em
-  100%
-    max-height: 2em
-@keyframes toc-up
-  0%
-    transform: translateY(10em)
-  100%
-    transform: translateY(0)
-@keyframes article-appear
-  0%
-    opacity: 0.3
-    transform: translateY(1em)
-  100%
-    opacity: 1
-    transform: translateY(0)
-
 #exhibits
   .topic
     margin-left: 1em
@@ -1010,14 +987,12 @@ header
     margin-top: 2.4em
     padding: 0.6em 2em 1em
 
-    > ul > li
+    .topic
       float: left
-      margin-right: 2em
-      width: 33%
+      margin-right: 1em
+      width: calc(33% - 1em)
       &:first-child
-        margin-left: -0.6em
-        .topic, + li .topic
-          margin-right: -1.2em
+        margin-left: 0.5em
       &:last-child
         float: none
         margin-left: calc(67% + 2em)
@@ -1027,11 +1002,8 @@ header
           margin-left: 0
           margin-right: -0.6em
 
-  .has-exhibit .exhibit-toc > ul > li:first-child
+  .has-exhibit .exhibit-toc .topic:first-child
     margin-right: -0.1em
-    width: calc(33% + 2em)
-    .topic
-      margin-right: 0
 
 .exhibit-area
   .exhibit-wrapper
@@ -1234,6 +1206,11 @@ header
     width: 30em
 
 @import 'styles/splash.sass'
+
+// GUIDE CONTENT
+
+@import 'styles/guide.sass'
+@import 'styles/statuses.sass'
 
 // ARTICLE CONTENT
 

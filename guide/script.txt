@@ -1,0 +1,283 @@
+[55 46 11] LAYOUT
+STATUS
+
+# STATUS
+preinit
+
+[55 46 12] STATUS
+init
+
+[55 46 31] LAYOUT
+STATUS 60 NARRATION
+
+# NARRATION
+Welcome to Apollo 13 Real-time. This is a deep-dive educational experience on the six hours immediately following the Apollo 13 accident.
+
+[55 46 38] NARRATION
+The crew just wrapped up a TV broadcast, and Mission Control is preparing some housekeeping tasks before sleep period. The accident will not occur for almost another ten minutes.
+
+Don't worry too much about what they're saying just yet. We'll get there.
+
+[55 46 50] NARRATION
+While they work out their chores, let's go over some basics and information about the Apollo spacecraft, Mission Control, and what you're hearing.
+
+If you would rather this narration go away, you can use the toggle in the upper left corner of the screen.
+
+[55 47 05] NARRATION
+This is the Apollo spacecraft. It's made up of four modules mated together. Together like this, it's sometimes called the {{stack}}.
+
+[55 47 15] STATUS
+s-ivb
+
+# NARRATION
+Apollo had a travel companion: the S-IVB stage, part of the Saturn V rocket, was responsible for the heavy duty work of sending the spacecraft from Earth orbit all the way out to intercept the Moon.
+
+For the first time on Apollo 13, the S-IVB was directed to impact the Moon rather than boost away into a safe Solar orbit, as a seismometer had been left behind by Apollo 12. This detail will become important later.
+
+[55 47 35] STATUS
+staged-0
+
+[55 47 37] STATUS
+staged-1
+
+# NARRATION
+The two primary spacecraft units are the Command/Service Module (referred to as the CSM), and the Lunar Module (called the LM).
+
+[55 47 49] STATUS
+staged-2
+
+# NARRATION
+Together, the Command and Service Module (CSM) would orbit the Moon, while the Lunar Module (LM) would descend to the Lunar surface.
+
+[55 47 54] STATUS
+descent
+
+[55 48 05] STATUS
+ascent
+
+# NARRATION
+To return from the surface, the Lunar Module would leave behind a lot of heavy equipment and fuel to save weight. The portion that returned is known as the Ascent stage; the part that's left behind is the Descent stage.
+
+Each stage had its own batteries, tanks, and engine, with the Descent engine being more powerful and featureful.
+
+[55 48 25] STATUS
+staged-3
+
+# NARRATION
+On their way to the Moon, however, all these stages were mated together to form the complete Apollo spacecraft. During this phase of the mission, the Service Module provided most of the consumables (power, oxygen, and so on) and did most of the work, aided by the Command Module instrumentation and computer.
+
+[55 48 35] STATUS
+staged-4
+
+[55 48 42] NARRATION
+In reality, it wouldn't just remain stationary like this, however, because in space the temperature difference between Sun and shade become extreme without air to diffuse the heat.
+
+Thermal management is a huge concern in spaceflight. Too hot, and delicate components could fry; too cold, and they might stop working.
+
+[55 49 00] NARRATION
+For this reason, there are heaters to keep many internal components at operating temperature ranges.
+
+Also for this reason, the spacecraft was usually put into a Passive Thermal Control (PTC) mode, in which the spacecraft was put into a slow {{roll}} to "cook" the spacecraft slowly and evenly.  We would animate this for you, but it's a 2D drawing. Sorry!
+
+[55 49 20] STATUS
+attitude
+
+# NARRATION
+Now that we've brought up {{roll}}, this is a good time to talk about {{attitude}}.
+
+The spacecraft's attitude is its orientation relative to "the universe." It can be described at any time with three values: {{pitch}}, {{roll}}, and {{yaw}}.
+
+Pitch is like an airplane nosing to climb or fall. Roll is like rotating the Apollo hot dog on a stick. And yaw is spinning a spinner on a table.
+
+[55 49 45] STATUS
+stars-1
+
+# NARRATION
+It is important to keep track of the spacecraft's {{attitude}} at all times. Among other reasons, this ensures that when the crew perform burns to correct the spacecraft's trajectory, they know which way to point the vehicle.
+
+To do this, astronauts turn to the same guides as did mariners upon the ancient sea: the stars.
+
+[55 50 00] STATUS
+stars-2
+
+# NARRATION
+By using a variety of telescopes and sextants mounted at known positions on board the spacecraft, such as the Alignment Optical Telescope ({{AOT}}) and Crewman Optical Alignment Sight ({{COAS}}), the astronauts could take readings of known stars and determine their {{attitude}}.
+
+[55 50 04] STATUS
+stars-3
+
+[55 50 09] STATUS
+stars-4
+
+[55 50 12] NARRATION
+The Apollo Guidance Computer ({{AGC}}) did the readings and math. During a P51 from-scratch alignment, the crew pressed a button once they had aimed the telescope at a known star, and the computer would take a sample. They then told it which star it was, and repeated the task for a second star.
+
+During a P52 alignment confirmation, the computer would point the telescope automatically at stars, and the crew needed only to adjust and confirm. ADD STARCHART!
+
+[55 50 17] STATUS
+stars-2
+
+[55 50 22] STATUS
+stars-3
+
+[55 50 27] STATUS
+stars-4
+
+[55 50 32] LAYOUT
+STATUS 35 NARRATION 35 DIAGRAM
+
+# STATUS
+imu-0
+
+# DIAGRAM
+imu
+
+# NARRATION
+It is one thing to determine the {{attitude}} at one point in time; it is another to keep it updated as the spacecraft drifts around. In space, with no air to slow things down, nothing stays still.
+
+This movement tracking was accomplished using an advanced gyroscope system, called the Inertial Measurement Unit ({{IMU}}).
+
+[55 50 42] STATUS
+imu-1
+
+# NARRATION
+The {{IMU}} works like a compass resting in your palm: a freely rotating <em>stable member</em> (here, the compass needle) remains fixed relative to a reference point (the Earth's magnetic field) even if you yourself turn around.
+
+In a gyroscope, the force that holds the stable member (<em>right</em>: the boxes) fixed is the angular momentum of a spinning weight rather than magnetism, but it's the same idea. The spacecraft then reads the orientation of the stable member with {{resolvers}} in the rings.
+
+[55 50 47] STATUS
+imu-2
+
+[55 50 52] STATUS
+imu-3
+
+[55 50 57] STATUS
+imu-4
+
+[55 51 03] NARRATION
+The {{IMU}} is an advanced gyroscope. Its stable member is not held stationary by a spinning weight. Rather, extra-sensitive small gyroscope instruments are fed into servo motors that actively drive the stable member to hold it still relative to the universe.
+
+This is useful because it is often necessary to shift the stable member around, and choose exactly where it rests, to avoid {{gimbal lock}}.
+
+[55 51 08] STATUS
+imu-5
+
+[55 51 13] STATUS
+imu-6
+
+[55 51 18] STATUS
+imu-7
+
+# NARRATION
+With only three gimbal rings, the {{IMU}} is susceptible to a problem called {{gimbal lock}}: if the spacecraft rotates through certain angles the stable member will get dragged along with it rather than float, ruining the reference.
+
+To lower the chances of a gimbal lock the stable member would be carefully placed at certain angles chosen based on the activities the crew was performing. It could be moved quickly but imprecisely, in a {{coarse align}} procedure, or tuned slowly as part of a {{fine align}}.
+
+[55 51 23] STATUS
+imu-5
+
+[55 51 28] STATUS
+imu-6
+
+[55 51 33] STATUS
+imu-7
+
+[55 51 35] NARRATION
+The combination of maintaining a healthy {{IMU}} and understanding the spacecraft's {{attitude}} was called a {{platform}}. When you hear people in the audio refer to the platform, this is what they mean.
+
+Even if everything was done correctly, the IMU could drift over time, and the platform needed recalibration. A P52 could reconfirm the alignment, after which the IMU might be adjusted slightly with a {{fine align}} operation.
+
+[55 51 38] STATUS
+imu-5
+
+[55 51 44] STATUS
+imu-6
+
+[55 51 50] STATUS
+comms-0
+
+# NARRATION
+To get the astronauts where they needed to go, though, their <em>position</em> was necessary as well.
+
+The {{IMU}} and {{AGC}} did their best to track the spacecraft's movement, but the instruments on board were limited. Imagine trying to measure your distance travelled down a freeway, but using only your speedometer. Spaceships only have an accelerometer!
+
+[55 52 05] STATUS
+comms-1
+
+# DIAGRAM
+msfn-sites
+
+# NARRATION
+So, the spacecraft was better tracked from a reliable point of reference: the Earth. A series of radio stations on Earth maintained communications with Apollo as the Earth rotated stations in and out of view.
+
+Handoffs between stations were a routine part of Apollo life, and typically involved a short loss of signal.
+
+[55 52 20] NARRATION
+The signal contained telemetry data, voice, and uplink command data on top of a constant carrier signal. The {{doppler shift}} of that carrier wave as it bounced back to the Earth could be measured and triangulated to determine Apollo's exact position.
+
+We will talk more about Apollo comms later, as a loss of communication becomes a major issue.
+
+[55 52 40] STATUS
+rcs
+
+# DIAGRAM
+rcs
+
+# NARRATION
+Once you know where you are and what you're looking at, you can get where you're going. In spaceflight, a control system spins and points the ship, and the propulsion system makes it go.
+
+The Reaction Control System ({{RCS}}) is a collection of small jets that would fire in concert to rotate the vehicle. Usually, this was done by the ship's computer, but the crew could take over, with its help if they wanted.
+
+[55 53 00] NARRATION
+
+To actually accerelate in a direction, the Service Propulsion System ({{SPS}}) in the {{Service Module}} and the Descent Propulsion System ({{DPS}}) in the {{Lunar Module}} are the primary engine systems you'll hear about today.
+
+
+
+
+
+
+
+
+
+
+[99 51 25] LAYOUT
+STATUS NARRATION 60 DIAGRAM
+
+# DIAGRAM
+rcs
+
+# NARRATION
+The Reaction Control System ({{RCS}}) is comprised of a variety of what are effectively miniature rocket engines carefully arranged around all three spacecraft. Each jet will, when fired, accelerate the spacecraft around exactly one rotational axis ({{pitch}}, {{roll}}, and {{yaw}}).
+
+The speed at which the spacecraft is rotating is referred to as a {{rate}}. This can also be used in an accelerative sense: "picking up rates" means something is adding to the spacecraft's rotation rate.
+
+[99 50 40] NARRATION
+Recall that there is no air resistance in space, and so there is nothing to naturally slow the spacecraft to a stop if it is spinning. This fact also means that it can be more difficult than it seems to precisely control the vehicle.
+
+For this reason, Apollo was designed with a variety of assistive control modes to help pilot the craft.
+
+[99 50 50] NARRATION
+Under full computer control, the spacecraft could automatically maintain the spacecraft within a narrow (1°) or wide (5°) deadband of some particular {{attitude}}. It could also automatically perform crew-defined maneuvers to safely drift around to a new target attitude.
+
+The hand controllers could be used to change the attitude in this {{Attitude Hold}} mode. In this case, the spacecraft will automatically fire opposing thrusters to halt the spacecraft's rotation once the controller was released.
+
+# DIAGRAM
+panel mdc
+349 1137
+846 1284
+
+[99 51 00] NARRATION
+In manual flight, the crew could still rely on the electronics to condition their inputs. Under {{Minimum Impulse}} mode, for example, each push of the controller would only pulse the jets the minimum consistent amount. It would have to be released and deflected again to fire a subsequent time.
+
+In {{Acceleration Command}} mode, the hand controllers more or less directly fired the jets, but still with the help of the electronics to translate the amount of deflection to the thrust output. In both of these modes, the crew was responsible for manually halting any rotation of the vehicle.
+
+[99 51 15] NARRATION
+If the electronics were not available or trustworthy, {{Direct}} RCS mode wired the hand controllers straight to a dedicated set of solenoids to fire the thrusters. Unlike {{Accel Command}}, Direct firing strength is always constant: it does not vary according to controller deflection.
+
+# DIAGRAM
+panel mdc
+325 1272
+627 1425
+
+
