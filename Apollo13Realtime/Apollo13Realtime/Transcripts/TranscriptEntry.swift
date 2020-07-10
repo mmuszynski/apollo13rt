@@ -14,6 +14,16 @@ import os
 struct TranscriptEntry: Codable {
     static var logger = Logger(subsystem: "com.mmuszynski.apollo13rt", category: "TranscriptEntry")
     
+    /// A formatter to produce a HH:MM:SS time string
+    static var timeFormatter: DateComponentsFormatter = {
+        //https://stackoverflow.com/questions/35215694/format-timer-label-to-hoursminutesseconds-in-swift/35215847
+        let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = .positional // Use the appropriate positioning for the current locale
+        formatter.allowedUnits = [ .hour, .minute, .second ] // Units to display in the formatted string
+        formatter.zeroFormattingBehavior = [ .pad ] // Pad with zeroes where appropriate for the locale
+        return formatter
+    }()
+    
     var id: Int
     var start: Int?
     var end: Int?
@@ -66,39 +76,11 @@ struct TranscriptEntry: Codable {
         }
         
         return parts
-        
-        //        var parts = [TranscriptPart]()
-        //
-        //        for i in 0..<messageAnnotationRanges.count {
-        //            let range = messageAnnotationRanges[i]
-        //
-        //            if i == 0 {
-        //                let startMessage = String(message[message.startIndex..<range.lowerBound])
-        //                if startMessage != "" {
-        //                    let stripped = startMessage.replacingOccurrences(of: "{", with: "").replacingOccurrences(of: "}", with: "")
-        //                    parts.append(.plain(stripped))
-        //
-        //                    TranscriptEntry.logger.debug("Started with plain message: \(stripped)")
-        //                }
-        //            }
-        //
-        //            let annotatedMessage = String(message[range])
-        //            let stripped = annotatedMessage.replacingOccurrences(of: "{", with: "").replacingOccurrences(of: "}", with: "")
-        //            parts.append(.annotated(stripped, annotation: tokens![i], index: i))
-        //            TranscriptEntry.logger.debug("Found token message: \(stripped)")
-        //
-        //            if i == messageAnnotationRanges.count - 1 {
-        //                let endMessage = String(message[range.upperBound..<message.endIndex])
-        //                if endMessage != "" {
-        //                    let stripped = endMessage.replacingOccurrences(of: "{", with: "").replacingOccurrences(of: "}", with: "")
-        //                    parts.append(.plain(stripped))
-        //                    TranscriptEntry.logger.debug("Finished with plain message: \(stripped)")
-        //                }
-        //            }
-        //        }
-        //
-        //
-        //        return parts
+    }
+    
+    var METString: String? {
+        guard let start = self.start else { return nil }
+        return TranscriptEntry.timeFormatter.string(from: TimeInterval(start))
     }
     
     var usefulEnd: Int? {

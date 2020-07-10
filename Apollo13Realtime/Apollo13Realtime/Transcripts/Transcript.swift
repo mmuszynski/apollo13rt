@@ -27,8 +27,8 @@ struct Transcript {
     }
 }
 
-extension Transcript: Collection {
-
+extension Transcript: RandomAccessCollection {
+    
     typealias Element = TranscriptEntry
     
     func index(after i: Array<Transcript.Element>.Index) -> Array<Transcript.Element>.Index {
@@ -52,6 +52,11 @@ extension Transcript: Collection {
 extension Transcript {
     static var airGroundLoop: Transcript {
         let url = Bundle.main.url(forResource: "air-ground-loop", withExtension: "json")!
+        return try! Transcript(url: url)
+    }
+    
+    static var flightDirectorLoop: Transcript {
+        let url = Bundle.main.url(forResource: "flight-director-loop", withExtension: "json")!
         return try! Transcript(url: url)
     }
 }

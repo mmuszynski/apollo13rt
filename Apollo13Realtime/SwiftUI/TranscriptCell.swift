@@ -34,7 +34,7 @@ struct TranscriptCell: View {
     
     var body: some View {
         HStack(alignment: .firstTextBaseline) {
-            Text("3:30:04")
+            Text("\(entry.start!)")
             VStack(alignment: .leading) {
                 Text(entry.source)
                 annotatedText(for: entry)

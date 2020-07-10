@@ -28,8 +28,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "TranscriptCell", for: indexPath) as! TranscriptTableViewCell
         
-        if let startTime = entry.start  {
-            cell.timestampLabel.text = timeFormatter.string(from: TimeInterval(startTime))
+        if let text = entry.METString  {
+            cell.timestampLabel.text = text
             cell.timestampLabel.alpha = 1.0
         } else {
             cell.timestampLabel.alpha = 0.0

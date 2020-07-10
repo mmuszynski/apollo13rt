@@ -103,16 +103,6 @@ class ViewController: UIViewController {
     /// The tableview that displays the air-to-ground loop
     @IBOutlet weak var flightDirectorTableView: UITableView!
 
-    /// A formatter to produce a HH:MM:SS time string
-    lazy var timeFormatter: DateComponentsFormatter = {
-        //https://stackoverflow.com/questions/35215694/format-timer-label-to-hoursminutesseconds-in-swift/35215847
-        let formatter = DateComponentsFormatter()
-        formatter.unitsStyle = .positional // Use the appropriate positioning for the current locale
-        formatter.allowedUnits = [ .hour, .minute, .second ] // Units to display in the formatted string
-        formatter.zeroFormattingBehavior = [ .pad ] // Pad with zeroes where appropriate for the locale
-        return formatter
-    }()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -220,7 +210,7 @@ class ViewController: UIViewController {
     /// Updates the Mission Elapsed Time Label based on the time of the audio player
     func updateMETLabel() {
         let missionElapsedTime = self.playerTimeInMET
-        guard let missionElapsedTimeString = self.timeFormatter.string(from: missionElapsedTime) else {
+        guard let missionElapsedTimeString = TranscriptEntry.timeFormatter.string(from: missionElapsedTime) else {
             return
         }
         self.missionElapsedTimeLabel.text = missionElapsedTimeString
@@ -230,7 +220,7 @@ class ViewController: UIViewController {
         }).last {
             specialEventDescriptionLabel.text = currentEvent.description
             let currentEventTime = currentEvent.displayTime(at: playerTimeInMET)
-            specialEventTimeLabel.text = "0" + self.timeFormatter.string(from: currentEventTime)!
+            specialEventTimeLabel.text = TranscriptEntry.timeFormatter.string(from: currentEventTime)!
         }
     }
     
