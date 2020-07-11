@@ -11,19 +11,7 @@ import os
 
 //{"id":1,"start":200791,"end":200791,"source":"CAPCOM","line":4,"message":"Thank you, 13."}
 
-struct TranscriptEntry: Codable {
-    static var logger = Logger(subsystem: "com.mmuszynski.apollo13rt", category: "TranscriptEntry")
-    
-    /// A formatter to produce a HH:MM:SS time string
-    static var timeFormatter: DateComponentsFormatter = {
-        //https://stackoverflow.com/questions/35215694/format-timer-label-to-hoursminutesseconds-in-swift/35215847
-        let formatter = DateComponentsFormatter()
-        formatter.unitsStyle = .positional // Use the appropriate positioning for the current locale
-        formatter.allowedUnits = [ .hour, .minute, .second ] // Units to display in the formatted string
-        formatter.zeroFormattingBehavior = [ .pad ] // Pad with zeroes where appropriate for the locale
-        return formatter
-    }()
-    
+struct TranscriptEntry: Codable {    
     var id: Int
     var start: Int?
     var end: Int?
@@ -80,7 +68,7 @@ struct TranscriptEntry: Codable {
     
     var METString: String? {
         guard let start = self.start else { return nil }
-        return TranscriptEntry.timeFormatter.string(from: TimeInterval(start))
+        return MediaController.timeFormatter.string(from: TimeInterval(start))
     }
     
     var usefulEnd: Int? {

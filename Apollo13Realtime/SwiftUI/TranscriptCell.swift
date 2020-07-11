@@ -9,8 +9,6 @@
 import SwiftUI
 import os
 
-var transcriptCellLogger = Logger(subsystem: "com.mmuszynski.apollo13rt", category: "TranscriptCell")
-
 func annotatedText(for entry: TranscriptEntry) -> Text {
     var text = Text("")
     
@@ -18,10 +16,13 @@ func annotatedText(for entry: TranscriptEntry) -> Text {
         switch part {
         case .plain(let message):
             text = text + Text(message)
+                .font(Font.custom("menlo", size: 16))
         case .annotated(let message, _, let index):
-            text = text + Text(message).underline()
+            text = text + Text(message)
+                .font(Font.custom("menlo", size: 16))
+                .underline()
             text = text + Text("\(index + 1)")
-                .font(.caption)
+                .font(Font.custom("menlo", size: 12))
                 .baselineOffset(6.0)
         }
     }
@@ -34,16 +35,19 @@ struct TranscriptCell: View {
     
     var body: some View {
         HStack(alignment: .firstTextBaseline) {
-            Text("\(entry.start!)")
+            Text("\(entry.METString ?? "MET")")
+                .font(Font.custom("menlo", size: 16))
             VStack(alignment: .leading) {
                 Text(entry.source)
+                    .font(Font.custom("menlo", size: 16))
+                    .bold()
                 annotatedText(for: entry)
                 ForEach(entry.tokens ?? [], id: \.hash) { string in
                     Text("\((entry.tokens?.firstIndex(of: string) ?? 0) + 1): ")
-                        .font(.caption)
+                        .font(Font.custom("menlo", size: 12))
                         .italic() +
                     Text(string)
-                        .font(.caption)
+                        .font(Font.custom("menlo", size: 12))
                         .italic()
                 }
             }

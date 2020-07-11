@@ -16,6 +16,11 @@
 		27A4612024AE3BFF004888B8 /* flight-director-loop.lookup.json in Resources */ = {isa = PBXBuildFile; fileRef = 27A4611A24AE3BFF004888B8 /* flight-director-loop.lookup.json */; };
 		27A4612224AE3C12004888B8 /* TranscriptEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4612124AE3C12004888B8 /* TranscriptEntry.swift */; };
 		27A9D9AC24B8C53F00102441 /* TranscriptViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A9D9AB24B8C53F00102441 /* TranscriptViewer.swift */; };
+		27A9D9AE24B95CB300102441 /* PlayerControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A9D9AD24B95CB300102441 /* PlayerControls.swift */; };
+		27A9D9B024B95D2700102441 /* MediaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A9D9AF24B95D2600102441 /* MediaController.swift */; };
+		27A9D9B224B9693A00102441 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A9D9B124B9693A00102441 /* MainView.swift */; };
+		27A9D9B424B96A7000102441 /* METView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A9D9B324B96A7000102441 /* METView.swift */; };
+		27A9D9B624B96B1100102441 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A9D9B524B96B1100102441 /* EventView.swift */; };
 		27AA171E229F1E91002D0F1B /* TranscriptTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA171D229F1E91002D0F1B /* TranscriptTableViewCell.swift */; };
 		27AB43CA22A0BF96006D7A5F /* Transcript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AB43C922A0BF95006D7A5F /* Transcript.swift */; };
 		27ACF62A229EFFF900B2E9B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ACF629229EFFF900B2E9B2 /* AppDelegate.swift */; };
@@ -52,6 +57,11 @@
 		27A4611A24AE3BFF004888B8 /* flight-director-loop.lookup.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "flight-director-loop.lookup.json"; path = "../script/flight-director-loop.lookup.json"; sourceTree = "<group>"; };
 		27A4612124AE3C12004888B8 /* TranscriptEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranscriptEntry.swift; sourceTree = "<group>"; };
 		27A9D9AB24B8C53F00102441 /* TranscriptViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptViewer.swift; sourceTree = "<group>"; };
+		27A9D9AD24B95CB300102441 /* PlayerControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerControls.swift; sourceTree = "<group>"; };
+		27A9D9AF24B95D2600102441 /* MediaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaController.swift; sourceTree = "<group>"; };
+		27A9D9B124B9693A00102441 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		27A9D9B324B96A7000102441 /* METView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = METView.swift; sourceTree = "<group>"; };
+		27A9D9B524B96B1100102441 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
 		27AA171D229F1E91002D0F1B /* TranscriptTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptTableViewCell.swift; sourceTree = "<group>"; };
 		27AB43C922A0BF95006D7A5F /* Transcript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transcript.swift; sourceTree = "<group>"; };
 		27ACF626229EFFF900B2E9B2 /* Apollo13Realtime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apollo13Realtime.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,9 +103,13 @@
 		2704370524AEDBF400C9B61B /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				27A9D9B124B9693A00102441 /* MainView.swift */,
+				27A9D9AD24B95CB300102441 /* PlayerControls.swift */,
 				27A9D9AB24B8C53F00102441 /* TranscriptViewer.swift */,
 				27F4AE4224B748A1007868B7 /* TranscriptList.swift */,
 				2704370324AEDBA800C9B61B /* TranscriptCell.swift */,
+				27A9D9B324B96A7000102441 /* METView.swift */,
+				27A9D9B524B96B1100102441 /* EventView.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -138,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				27ACF629229EFFF900B2E9B2 /* AppDelegate.swift */,
+				27A9D9AF24B95D2600102441 /* MediaController.swift */,
 				27ACF62B229EFFF900B2E9B2 /* ViewController.swift */,
 				27EB8BB122A4B77500D81B6E /* ViewController+DataSource.swift */,
 				27AD5C3522A5AF6B0082DE8A /* Transcripts */,
@@ -289,15 +304,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				27EB8BB222A4B77500D81B6E /* ViewController+DataSource.swift in Sources */,
+				27A9D9B224B9693A00102441 /* MainView.swift in Sources */,
 				27F4AE3D24B650A6007868B7 /* Event.swift in Sources */,
 				2704370424AEDBA800C9B61B /* TranscriptCell.swift in Sources */,
 				27AB43CA22A0BF96006D7A5F /* Transcript.swift in Sources */,
 				27ACF62C229EFFF900B2E9B2 /* ViewController.swift in Sources */,
 				27AA171E229F1E91002D0F1B /* TranscriptTableViewCell.swift in Sources */,
+				27A9D9B624B96B1100102441 /* EventView.swift in Sources */,
 				27AD5C3422A5AF150082DE8A /* FontHelpers.swift in Sources */,
 				27F4AE4324B748A1007868B7 /* TranscriptList.swift in Sources */,
+				27A9D9AE24B95CB300102441 /* PlayerControls.swift in Sources */,
 				27A4612224AE3C12004888B8 /* TranscriptEntry.swift in Sources */,
+				27A9D9B424B96A7000102441 /* METView.swift in Sources */,
 				27A9D9AC24B8C53F00102441 /* TranscriptViewer.swift in Sources */,
+				27A9D9B024B95D2700102441 /* MediaController.swift in Sources */,
 				27ACF62A229EFFF900B2E9B2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

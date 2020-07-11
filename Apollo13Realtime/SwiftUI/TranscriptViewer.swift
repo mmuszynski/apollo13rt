@@ -10,8 +10,9 @@ import SwiftUI
 
 struct TranscriptViewer: View {
     var body: some View {
-        HStack {
+        HStack(spacing: 0) {
             TranscriptList(transcript: .airGroundLoop)
+            Divider()
             TranscriptList(transcript: .flightDirectorLoop)
         }
     }

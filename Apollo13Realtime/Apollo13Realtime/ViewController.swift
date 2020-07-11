@@ -9,27 +9,9 @@
 import UIKit
 import AVFoundation
 
-fileprivate extension CMTime {
-    init(seconds: TimeInterval) {
-        self.init(seconds: seconds, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
-    }
-}
-
-fileprivate extension AVPlayer {
-    func zeroToleranceSeek(to time: CMTime) {
-        self.seek(to: time, toleranceBefore: .zero, toleranceAfter: .zero)
-    }
-    func zeroToleranceSeekAhead(_ seconds: TimeInterval) {
-        self.seek(to: self.currentTime() + CMTime(seconds: seconds), toleranceBefore: .zero, toleranceAfter: .zero)
-    }
-    func zeroToleranceSeekBack(_ seconds: TimeInterval) {
-        self.seek(to: self.currentTime() - CMTime(seconds: seconds), toleranceBefore: .zero, toleranceAfter: .zero)
-    }
-}
-
 class ViewController: UIViewController {
     
-    var player: AVPlayer!
+    var mediaController = MediaController()
     
     /// The transcripts for the air-to-ground loop
     var airGroundLoop: Transcript!
@@ -81,7 +63,7 @@ class ViewController: UIViewController {
         
         //Convert all these times to CMTime wrapped in NSValue
         let triggerTimes = times.map { NSValue(time: CMTime(seconds: Double($0) - audioOffsetToMET, preferredTimescale: 10000000)) }
-        let token = player.addBoundaryTimeObserver(forTimes: triggerTimes, queue: nil) {
+        let token = mediaController.audioPlayer.addBoundaryTimeObserver(forTimes: triggerTimes, queue: nil) {
             self.updateHighlighting()
         }
         observerTokens.append(token)
@@ -90,7 +72,7 @@ class ViewController: UIViewController {
     /// Adds updates at half second intervals to update the audio transport interface
     func setupMETUpdates() {
         let timeScale = CMTimeScale(NSEC_PER_SEC)
-        let token = player.addPeriodicTimeObserver(forInterval: CMTime(seconds: 0.5, preferredTimescale: timeScale), queue: .main) { (_) in
+        let token = mediaController.audioPlayer.addPeriodicTimeObserver(forInterval: CMTime(seconds: 0.5, preferredTimescale: timeScale), queue: .main) { (_) in
             self.updateMETLabel()
             self.updateTransportControls()
         }
@@ -112,12 +94,6 @@ class ViewController: UIViewController {
         try! loadSpecialEvents()
         
         specialEventTimeLabel.font = UIFontMetrics(forTextStyle: .headline).scaledFont(for: specialEventTimeLabel.font)
-        
-        //load player
-        let audioURL = Bundle.main.url(forResource: "full", withExtension: "m4a")!
-        let asset = AVAsset(url: audioURL)
-        let item = AVPlayerItem(asset: asset)
-        player = AVPlayer(playerItem: item)
         
         setupTimingCuesFromTranscripts()
         setupMETUpdates()
@@ -198,7 +174,7 @@ class ViewController: UIViewController {
     
     /// The current time for the player in terms of Mission Elapsed Time
     var playerTimeInMET: TimeInterval {
-        return player.currentTime().seconds + audioOffsetToMET
+        return mediaController.audioPlayer.currentTime().seconds + audioOffsetToMET
     }
     
     /// The MET label itself
@@ -210,7 +186,7 @@ class ViewController: UIViewController {
     /// Updates the Mission Elapsed Time Label based on the time of the audio player
     func updateMETLabel() {
         let missionElapsedTime = self.playerTimeInMET
-        guard let missionElapsedTimeString = TranscriptEntry.timeFormatter.string(from: missionElapsedTime) else {
+        guard let missionElapsedTimeString = MediaController.timeFormatter.string(from: missionElapsedTime) else {
             return
         }
         self.missionElapsedTimeLabel.text = missionElapsedTimeString
@@ -220,7 +196,7 @@ class ViewController: UIViewController {
         }).last {
             specialEventDescriptionLabel.text = currentEvent.description
             let currentEventTime = currentEvent.displayTime(at: playerTimeInMET)
-            specialEventTimeLabel.text = TranscriptEntry.timeFormatter.string(from: currentEventTime)!
+            specialEventTimeLabel.text = MediaController.timeFormatter.string(from: currentEventTime)!
         }
     }
     
@@ -263,7 +239,7 @@ class ViewController: UIViewController {
     
     @IBAction func transportSliderValueChanged(_ sender: Any) {
         let playertime = TimeInterval(audioTransportSlider.value) - audioOffsetToMET
-        player.seek(to: CMTime(seconds: playertime), toleranceBefore: .zero, toleranceAfter: .zero)
+        mediaController.audioPlayer.seek(to: CMTime(seconds: playertime), toleranceBefore: .zero, toleranceAfter: .zero)
         
         if fabsf(audioTransportSlider.value - sliderDragValue) > 30 {
             updateHighlighting()
@@ -272,52 +248,51 @@ class ViewController: UIViewController {
     }
     
     @IBAction func togglePlayer(_ sender: Any) {
-        guard let player = player else { return }
         
-        switch player.timeControlStatus {
+        switch mediaController.audioPlayer.timeControlStatus {
         case .paused:
-            player.play()
+            mediaController.audioPlayer.play()
         case .waitingToPlayAtSpecifiedRate:
             break
         case .playing:
-            player.pause()
+            mediaController.audioPlayer.pause()
         @unknown default:
             fatalError("Unimplemented player case")
         }
     }
     
     @IBAction func playerAheadShortest(_ sender: Any) {
-        player.zeroToleranceSeekAhead(5)
+        mediaController.zeroToleranceSeekAhead(5)
         updateMETLabel()
         updateHighlighting()
     }
     
     @IBAction func playerBackShortest(_ sender: Any) {
-        player.zeroToleranceSeekBack(5)
+        mediaController.zeroToleranceSeekBack(5)
         updateMETLabel()
         updateHighlighting()
     }
     
     @IBAction func playerAheadShort(_ sender: Any) {
-        player.zeroToleranceSeekAhead(15)
+        mediaController.zeroToleranceSeekAhead(15)
         updateMETLabel()
         updateHighlighting()
     }
     
     @IBAction func playerBackShort(_ sender: Any) {
-        player.zeroToleranceSeekBack(15)
+        mediaController.zeroToleranceSeekBack(15)
         updateMETLabel()
         updateHighlighting()
     }
     
     @IBAction func playerAheadLong(_ sender: Any) {
-        player.zeroToleranceSeekAhead(30)
+        mediaController.zeroToleranceSeekAhead(30)
         updateMETLabel()
         updateHighlighting()
     }
     
     @IBAction func playerBackLong(_ sender: Any) {
-        player.zeroToleranceSeekBack(30)
+        mediaController.zeroToleranceSeekBack(30)
         updateMETLabel()
         updateHighlighting()
     }

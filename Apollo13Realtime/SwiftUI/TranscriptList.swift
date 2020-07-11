@@ -11,9 +11,12 @@ import SwiftUI
 struct TranscriptList: View {
     var transcript: Transcript
     
+    
     var body: some View {
         List(transcript, id: \.id) { entry in
-            TranscriptCell(entry: entry)
+            ScrollViewReader { reader in
+                TranscriptCell(entry: entry)
+            }
         }
     }
 }
