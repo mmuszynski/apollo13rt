@@ -38,6 +38,7 @@ class MediaController: ObservableObject {
         //load player
         let audioURL = Bundle.main.url(forResource: "full", withExtension: "m4a")!
         let asset = AVAsset(url: audioURL)
+        audioLength = TimeInterval(asset.duration.seconds)
         let item = AVPlayerItem(asset: asset)
         audioPlayer = AVPlayer(playerItem: item)
         
@@ -86,6 +87,11 @@ class MediaController: ObservableObject {
     /// The current time for the player in terms of Mission Elapsed Time
     var playerTimeInMET: TimeInterval {
         return audioPlayer.currentTime().seconds + .audioOffsetToMET
+    }
+    
+    var audioLength: TimeInterval
+    var validMETRange: ClosedRange<TimeInterval> {
+        return TimeInterval.audioOffsetToMET...(audioLength + .audioOffsetToMET)
     }
     
     /// Apple suggests that we dispose of these when we are done with them
