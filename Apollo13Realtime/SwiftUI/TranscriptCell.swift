@@ -62,6 +62,6 @@ struct TranscriptCell_Previews: PreviewProvider {
                 .previewLayout(.sizeThatFits)
             TranscriptCell(entry: Transcript.airGroundLoop.first(where: {$0.message.contains("{")})!)
                 .previewLayout(.sizeThatFits)
-        }
+        }.environmentObject(MediaController())
     }
 }

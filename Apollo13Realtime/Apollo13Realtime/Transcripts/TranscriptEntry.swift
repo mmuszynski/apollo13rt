@@ -85,6 +85,10 @@ struct TranscriptEntry: Codable {
         return TimeInterval(start)..<TimeInterval(usefulEnd!)
     }
     
+    func active(at met: TimeInterval) -> Bool {
+        return self.activeMETRange?.contains(met) == true
+    }
+    
     var annotatedMessage: NSAttributedString {
         var final = message
         var rangesOfAnnotations: [NSRange] = []
