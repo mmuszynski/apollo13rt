@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		272AA7BE2311ADAB00D3DA3F /* full.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 272AA7BD2311ADAB00D3DA3F /* full.m4a */; };
 		27A4611B24AE3BFF004888B8 /* air-ground-loop.lookup.json in Resources */ = {isa = PBXBuildFile; fileRef = 27A4611524AE3BFF004888B8 /* air-ground-loop.lookup.json */; };
 		27A4611C24AE3BFF004888B8 /* glossary.json in Resources */ = {isa = PBXBuildFile; fileRef = 27A4611624AE3BFF004888B8 /* glossary.json */; };
 		27A4611D24AE3BFF004888B8 /* flight-director-loop.json in Resources */ = {isa = PBXBuildFile; fileRef = 27A4611724AE3BFF004888B8 /* flight-director-loop.json */; };
@@ -15,8 +14,6 @@
 		27A4611F24AE3BFF004888B8 /* glossary.lookup.json in Resources */ = {isa = PBXBuildFile; fileRef = 27A4611924AE3BFF004888B8 /* glossary.lookup.json */; };
 		27A4612024AE3BFF004888B8 /* flight-director-loop.lookup.json in Resources */ = {isa = PBXBuildFile; fileRef = 27A4611A24AE3BFF004888B8 /* flight-director-loop.lookup.json */; };
 		27A4612224AE3C12004888B8 /* TranscriptEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4612124AE3C12004888B8 /* TranscriptEntry.swift */; };
-		27A3E6F522A7111D000BEAF0 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3E6F422A7111D000BEAF0 /* Event.swift */; };
-		27A3E6F922A711AD000BEAF0 /* EventList.json in Resources */ = {isa = PBXBuildFile; fileRef = 27A3E6F822A711AD000BEAF0 /* EventList.json */; };
 		27AA171E229F1E91002D0F1B /* TranscriptTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA171D229F1E91002D0F1B /* TranscriptTableViewCell.swift */; };
 		27AB43CA22A0BF96006D7A5F /* Transcript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AB43C922A0BF95006D7A5F /* Transcript.swift */; };
 		27ACF62A229EFFF900B2E9B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ACF629229EFFF900B2E9B2 /* AppDelegate.swift */; };
@@ -27,6 +24,9 @@
 		27ACF63F229EFFFB00B2E9B2 /* Apollo13RealtimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ACF63E229EFFFB00B2E9B2 /* Apollo13RealtimeTests.swift */; };
 		27AD5C3422A5AF150082DE8A /* FontHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AD5C3322A5AF150082DE8A /* FontHelpers.swift */; };
 		27EB8BB222A4B77500D81B6E /* ViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EB8BB122A4B77500D81B6E /* ViewController+DataSource.swift */; };
+		27F4AE3D24B650A6007868B7 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F4AE3B24B650A6007868B7 /* Event.swift */; };
+		27F4AE3E24B650A6007868B7 /* EventList.json in Resources */ = {isa = PBXBuildFile; fileRef = 27F4AE3C24B650A6007868B7 /* EventList.json */; };
+		27F4AE4124B65349007868B7 /* full.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 27F4AE4024B65349007868B7 /* full.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +40,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		272AA7BD2311ADAB00D3DA3F /* full.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = full.m4a; sourceTree = "<group>"; };
 		27A4611524AE3BFF004888B8 /* air-ground-loop.lookup.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "air-ground-loop.lookup.json"; path = "../script/air-ground-loop.lookup.json"; sourceTree = "<group>"; };
 		27A4611624AE3BFF004888B8 /* glossary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = glossary.json; path = ../script/glossary.json; sourceTree = "<group>"; };
 		27A4611724AE3BFF004888B8 /* flight-director-loop.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "flight-director-loop.json"; path = "../script/flight-director-loop.json"; sourceTree = "<group>"; };
@@ -48,9 +47,6 @@
 		27A4611924AE3BFF004888B8 /* glossary.lookup.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = glossary.lookup.json; path = ../script/glossary.lookup.json; sourceTree = "<group>"; };
 		27A4611A24AE3BFF004888B8 /* flight-director-loop.lookup.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "flight-director-loop.lookup.json"; path = "../script/flight-director-loop.lookup.json"; sourceTree = "<group>"; };
 		27A4612124AE3C12004888B8 /* TranscriptEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranscriptEntry.swift; sourceTree = "<group>"; };
-		27A3E6F422A7111D000BEAF0 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		27A3E6F822A711AD000BEAF0 /* EventList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EventList.json; sourceTree = "<group>"; };
-		27A3E6FA22A81170000BEAF0 /* Apollo13Realtime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Apollo13Realtime.entitlements; sourceTree = "<group>"; };
 		27AA171D229F1E91002D0F1B /* TranscriptTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptTableViewCell.swift; sourceTree = "<group>"; };
 		27AB43C922A0BF95006D7A5F /* Transcript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transcript.swift; sourceTree = "<group>"; };
 		27ACF626229EFFF900B2E9B2 /* Apollo13Realtime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apollo13Realtime.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,7 +61,9 @@
 		27ACF640229EFFFB00B2E9B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27AD5C3322A5AF150082DE8A /* FontHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontHelpers.swift; sourceTree = "<group>"; };
 		27EB8BB122A4B77500D81B6E /* ViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+DataSource.swift"; sourceTree = "<group>"; };
-		27EC8AF622A4319E00056467 /* full.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = full.m4a; path = ../../../../../Desktop/full.m4a; sourceTree = "<group>"; };
+		27F4AE3B24B650A6007868B7 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = Apollo13Realtime/Events/Event.swift; sourceTree = SOURCE_ROOT; };
+		27F4AE3C24B650A6007868B7 /* EventList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = EventList.json; path = Apollo13Realtime/Events/EventList.json; sourceTree = SOURCE_ROOT; };
+		27F4AE4024B65349007868B7 /* full.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = full.m4a; path = ../../../Media/full.m4a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,16 +85,6 @@
 
 /* Begin PBXGroup section */
 		27A4611424AE3BE6004888B8 /* Transcript Files */ = {
-		27A3E6F322A7110E000BEAF0 /* Events */ = {
-			isa = PBXGroup;
-			children = (
-				27A3E6F422A7111D000BEAF0 /* Event.swift */,
-				27A3E6F822A711AD000BEAF0 /* EventList.json */,
-			);
-			path = Events;
-			sourceTree = "<group>";
-		};
-		27AA171F229F1F88002D0F1B /* Transcripts */ = {
 			isa = PBXGroup;
 			children = (
 				27A4611824AE3BFF004888B8 /* air-ground-loop.json */,
@@ -112,6 +100,7 @@
 		27ACF61D229EFFF900B2E9B2 = {
 			isa = PBXGroup;
 			children = (
+				27F4AE4024B65349007868B7 /* full.m4a */,
 				27A4611424AE3BE6004888B8 /* Transcript Files */,
 				27ACF628229EFFF900B2E9B2 /* Apollo13Realtime */,
 				27ACF63D229EFFFB00B2E9B2 /* Apollo13RealtimeTests */,
@@ -131,17 +120,13 @@
 		27ACF628229EFFF900B2E9B2 /* Apollo13Realtime */ = {
 			isa = PBXGroup;
 			children = (
-				27A3E6FA22A81170000BEAF0 /* Apollo13Realtime.entitlements */,
 				27ACF629229EFFF900B2E9B2 /* AppDelegate.swift */,
-				27EC8AF622A4319E00056467 /* full.m4a */,
 				27ACF62B229EFFF900B2E9B2 /* ViewController.swift */,
 				27EB8BB122A4B77500D81B6E /* ViewController+DataSource.swift */,
-				27AA171D229F1E91002D0F1B /* TranscriptTableViewCell.swift */,
-				27A3E6F322A7110E000BEAF0 /* Events */,
 				27AD5C3522A5AF6B0082DE8A /* Transcripts */,
 				27AD5C3322A5AF150082DE8A /* FontHelpers.swift */,
+				27F4AE3F24B650DA007868B7 /* Events */,
 				27AA171D229F1E91002D0F1B /* TranscriptTableViewCell.swift */,
-				272AA7BD2311ADAB00D3DA3F /* full.m4a */,
 				27ACF62D229EFFF900B2E9B2 /* Main.storyboard */,
 				27ACF630229EFFFB00B2E9B2 /* Assets.xcassets */,
 				27ACF632229EFFFB00B2E9B2 /* LaunchScreen.storyboard */,
@@ -166,6 +151,15 @@
 				27AB43C922A0BF95006D7A5F /* Transcript.swift */,
 			);
 			path = Transcripts;
+			sourceTree = "<group>";
+		};
+		27F4AE3F24B650DA007868B7 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				27F4AE3B24B650A6007868B7 /* Event.swift */,
+				27F4AE3C24B650A6007868B7 /* EventList.json */,
+			);
+			path = Events;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,17 +206,12 @@
 		27ACF61E229EFFF900B2E9B2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Mike Muszynski";
 				TargetAttributes = {
 					27ACF625229EFFF900B2E9B2 = {
 						CreatedOnToolsVersion = 10.2.1;
-						SystemCapabilities = {
-							com.apple.AccessWiFi = {
-								enabled = 0;
-							};
-						};
 					};
 					27ACF639229EFFFB00B2E9B2 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -256,15 +245,13 @@
 			files = (
 				27A4612024AE3BFF004888B8 /* flight-director-loop.lookup.json in Resources */,
 				27A4611D24AE3BFF004888B8 /* flight-director-loop.json in Resources */,
+				27F4AE3E24B650A6007868B7 /* EventList.json in Resources */,
 				27ACF634229EFFFB00B2E9B2 /* LaunchScreen.storyboard in Resources */,
 				27A4611B24AE3BFF004888B8 /* air-ground-loop.lookup.json in Resources */,
 				27A4611E24AE3BFF004888B8 /* air-ground-loop.json in Resources */,
 				27A4611F24AE3BFF004888B8 /* glossary.lookup.json in Resources */,
-				272AA7BE2311ADAB00D3DA3F /* full.m4a in Resources */,
 				27A4611C24AE3BFF004888B8 /* glossary.json in Resources */,
-				27A3E6F922A711AD000BEAF0 /* EventList.json in Resources */,
-				27EC8AF722A4319E00056467 /* full.m4a in Resources */,
-				27AA1723229F1FD1002D0F1B /* flight-director-loop.json in Resources */,
+				27F4AE4124B65349007868B7 /* full.m4a in Resources */,
 				27ACF631229EFFFB00B2E9B2 /* Assets.xcassets in Resources */,
 				27ACF62F229EFFF900B2E9B2 /* Main.storyboard in Resources */,
 			);
@@ -284,9 +271,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27A3E6F522A7111D000BEAF0 /* Event.swift in Sources */,
-				27AA1725229F201B002D0F1B /* TranscriptEntry.swift in Sources */,
 				27EB8BB222A4B77500D81B6E /* ViewController+DataSource.swift in Sources */,
+				27F4AE3D24B650A6007868B7 /* Event.swift in Sources */,
 				27AB43CA22A0BF96006D7A5F /* Transcript.swift in Sources */,
 				27ACF62C229EFFF900B2E9B2 /* ViewController.swift in Sources */,
 				27AA171E229F1E91002D0F1B /* TranscriptTableViewCell.swift in Sources */,
@@ -360,6 +346,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -385,7 +372,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -421,6 +408,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -440,7 +428,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -454,17 +442,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DF288G8ZJ6;
 				INFOPLIST_FILE = Apollo13Realtime/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mmuszynski.apollo13realtime;
+				PRODUCT_BUNDLE_IDENTIFIER = mmuszynski.Apollo13Realtime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -474,17 +461,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DF288G8ZJ6;
 				INFOPLIST_FILE = Apollo13Realtime/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mmuszynski.apollo13realtime;
+				PRODUCT_BUNDLE_IDENTIFIER = mmuszynski.Apollo13Realtime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
