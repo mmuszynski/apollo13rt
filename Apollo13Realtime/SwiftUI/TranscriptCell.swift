@@ -35,8 +35,9 @@ struct TranscriptCell: View {
     
     var body: some View {
         HStack(alignment: .firstTextBaseline) {
-            Text("\(entry.METString ?? "MET")")
+            Text("\(entry.METString ?? "00:00:00")")
                 .font(Font.custom("menlo", size: 16))
+                .foregroundColor(entry.METString == nil ? .clear : nil)
             VStack(alignment: .leading) {
                 Text(entry.source)
                     .font(Font.custom("menlo", size: 16))
