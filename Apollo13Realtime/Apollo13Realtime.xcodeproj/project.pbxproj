@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2704370424AEDBA800C9B61B /* TranscriptCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2704370324AEDBA800C9B61B /* TranscriptCell.swift */; };
+		27324F5024BBC862004D7A39 /* TransportSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27324F4F24BBC862004D7A39 /* TransportSlider.swift */; };
 		27A4611B24AE3BFF004888B8 /* air-ground-loop.lookup.json in Resources */ = {isa = PBXBuildFile; fileRef = 27A4611524AE3BFF004888B8 /* air-ground-loop.lookup.json */; };
 		27A4611C24AE3BFF004888B8 /* glossary.json in Resources */ = {isa = PBXBuildFile; fileRef = 27A4611624AE3BFF004888B8 /* glossary.json */; };
 		27A4611D24AE3BFF004888B8 /* flight-director-loop.json in Resources */ = {isa = PBXBuildFile; fileRef = 27A4611724AE3BFF004888B8 /* flight-director-loop.json */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		2704370324AEDBA800C9B61B /* TranscriptCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptCell.swift; sourceTree = "<group>"; };
+		27324F4F24BBC862004D7A39 /* TransportSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportSlider.swift; sourceTree = "<group>"; };
 		27A4611524AE3BFF004888B8 /* air-ground-loop.lookup.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "air-ground-loop.lookup.json"; path = "../script/air-ground-loop.lookup.json"; sourceTree = "<group>"; };
 		27A4611624AE3BFF004888B8 /* glossary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = glossary.json; path = ../script/glossary.json; sourceTree = "<group>"; };
 		27A4611724AE3BFF004888B8 /* flight-director-loop.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "flight-director-loop.json"; path = "../script/flight-director-loop.json"; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			children = (
 				27A9D9B124B9693A00102441 /* MainView.swift */,
 				27A9D9AD24B95CB300102441 /* PlayerControls.swift */,
+				27324F4F24BBC862004D7A39 /* TransportSlider.swift */,
 				27A9D9AB24B8C53F00102441 /* TranscriptViewer.swift */,
 				27F4AE4224B748A1007868B7 /* TranscriptList.swift */,
 				2704370324AEDBA800C9B61B /* TranscriptCell.swift */,
@@ -307,6 +310,7 @@
 				27A9D9B224B9693A00102441 /* MainView.swift in Sources */,
 				27F4AE3D24B650A6007868B7 /* Event.swift in Sources */,
 				2704370424AEDBA800C9B61B /* TranscriptCell.swift in Sources */,
+				27324F5024BBC862004D7A39 /* TransportSlider.swift in Sources */,
 				27AB43CA22A0BF96006D7A5F /* Transcript.swift in Sources */,
 				27ACF62C229EFFF900B2E9B2 /* ViewController.swift in Sources */,
 				27AA171E229F1E91002D0F1B /* TranscriptTableViewCell.swift in Sources */,

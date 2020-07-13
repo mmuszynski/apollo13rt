@@ -67,7 +67,10 @@ struct TranscriptEntry: Codable {
     }
     
     var METString: String? {
-        guard let start = self.start else { return nil }
+        guard let start = self.start else {
+            print("didn't get metstringstart")
+            return nil
+        }
         return MediaController.timeFormatter.string(from: TimeInterval(start))
     }
     

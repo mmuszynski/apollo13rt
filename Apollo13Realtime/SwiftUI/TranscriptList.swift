@@ -14,9 +14,9 @@ struct TranscriptList: View {
     
     var body: some View {
         List {
-            ForEach(transcript, id: \.id) { entry in
+            ForEach(transcript, id: \.message) { entry in
                 TranscriptCell(entry: entry)
-                    .listRowBackground(entry.active(at: mediaController.missionElapsedTime) ? Color.secondary : nil)
+                    .listRowBackground(transcript.activeIDs(for: mediaController.missionElapsedTime).contains(entry.id) ? Color.secondary : nil)
             }
         }
     }

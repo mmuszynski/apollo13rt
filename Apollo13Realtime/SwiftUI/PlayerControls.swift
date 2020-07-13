@@ -10,20 +10,31 @@ import SwiftUI
 
 struct PlayerControls: View {
     @EnvironmentObject var controller: MediaController
+    @State var scrubTime: TimeInterval = 0
+    @State var isUpdatingSlider: Bool = false {
+        didSet {
+            if !isUpdatingSlider {
+                controller.missionElapsedTime = self.scrubTime
+            } else {
+                scrubTime = controller.missionElapsedTime
+            }
+        }
+    }
+    @GestureState var isDetectingTap: Bool = false
     
     var body: some View {
         VStack {
             HStack {
                 Group {
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                        Image(systemName: "gobackward.60")
-                    })
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                        Image(systemName: "gobackward.30")
-                    })
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                        Image(systemName: "gobackward.10")
-                    })
+                    let secs = [60, 30, 10]
+                    ForEach(secs, id: \.self) { seconds in
+                        Button(action: {
+                            self.controller.zeroToleranceSeekBack(TimeInterval(seconds))
+                        }, label: {
+                            Image(systemName: "gobackward.\(seconds)")
+                        })
+                    }
+                    
                     Button(action: controller.togglePlayer, label: {
                         switch controller.audioPlayerStatus {
                         case .playing:
@@ -33,15 +44,14 @@ struct PlayerControls: View {
                         }
                     })
                     .padding([.leading, .trailing], /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                        Image(systemName: "goforward.10")
-                    })
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                        Image(systemName: "goforward.30")
-                    })
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                        Image(systemName: "goforward.60")
-                    })
+                    
+                    ForEach(secs.reversed(), id: \.self) { seconds in
+                        Button(action: {
+                            self.controller.zeroToleranceSeekAhead(TimeInterval(seconds))
+                        }, label: {
+                            Image(systemName: "goforward.\(seconds)")
+                        })
+                    }
                 }
                 .frame(width: 25, height: 25, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .imageScale(.large)
@@ -49,6 +59,10 @@ struct PlayerControls: View {
             }
             
             Slider(value: $controller.missionElapsedTime, in: controller.validMETRange)
+            Slider(value: isUpdatingSlider ? $scrubTime : $controller.missionElapsedTime, in: controller.validMETRange) { (isChanging) in
+                isUpdatingSlider = isChanging
+            }
+            TransportSlider(value: $controller.missionElapsedTime, range: controller.validMETRange)
         }
     }
 }

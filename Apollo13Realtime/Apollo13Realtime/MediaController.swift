@@ -17,6 +17,10 @@ extension CMTime {
 }
 
 fileprivate extension AVPlayer {
+    func zeroToleranceSeek(to met: TimeInterval) {
+        let time = met - .audioOffsetToMET
+        self.seek(to: CMTime(seconds: time))
+    }
     func zeroToleranceSeek(to time: CMTime) {
         self.seek(to: time, toleranceBefore: .zero, toleranceAfter: .zero)
     }
@@ -80,11 +84,19 @@ class MediaController: ObservableObject {
     var events: [Event]
     @Published var currentEvent: Event?
     
+    private var _playerIsSettingTimer: Bool = false
     /// The curent MET
-    @Published var missionElapsedTime: TimeInterval = .audioOffsetToMET
+    @Published var missionElapsedTime: TimeInterval = .audioOffsetToMET {
+        didSet {
+            if !_playerIsSettingTimer {
+                audioPlayer.zeroToleranceSeek(to: missionElapsedTime)
+            }
+        }
+    }
     
     // MARK: Time Label Updating
     /// The current time for the player in terms of Mission Elapsed Time
+    @available(*, deprecated: 0)
     var playerTimeInMET: TimeInterval {
         return audioPlayer.currentTime().seconds + .audioOffsetToMET
     }
@@ -118,9 +130,11 @@ class MediaController: ObservableObject {
     /// Adds updates at half second intervals to update the audio transport interface
     func setupMETUpdates() {
         let timeScale = CMTimeScale(NSEC_PER_SEC)
-        let token = audioPlayer.addPeriodicTimeObserver(forInterval: CMTime(seconds: 0.5, preferredTimescale: timeScale), queue: .main) { (_) in
+        let token = audioPlayer.addPeriodicTimeObserver(forInterval: CMTime(seconds: 0.5, preferredTimescale: timeScale), queue: .main) { [self] (_) in
             //Set MET
+            self._playerIsSettingTimer = true
             self.missionElapsedTime = self.playerTimeInMET
+            self._playerIsSettingTimer = false
             
             //Find events
             if let currentEvent = self.events.filter({ (event) -> Bool in
